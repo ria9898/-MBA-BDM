@@ -9,7 +9,7 @@ As a Business Analyst, We have been assigned the task of designing the database 
 
 ### **Domain/Industry:** Library Management System
 
-#### **Entities**
+#### **Entities:**
 
 1. Library
 2. Books
@@ -20,6 +20,6 @@ As a Business Analyst, We have been assigned the task of designing the database 
 7. Admin
 8. Empolyee
 9. Borrowing
-10 Fine
+10.Fine
 
 #### **Attributes:**
