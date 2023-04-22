@@ -20,6 +20,6 @@ As a Business Analyst, We have been assigned the task of designing the database 
 7. Admin
 8. Empolyee
 9. Borrowing
-10.Fine
+10. Fine
 
 #### **Attributes:**
