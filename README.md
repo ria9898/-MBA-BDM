@@ -1,6 +1,6 @@
 # MBA-BDM
-- ###### Riya Singh 22121003 - 22121003
-+ ###### [Riya Singh 22121003 - 22121003](https://github.com/ria9898)
+
+ ###### [Riya Singh - 22121003](https://github.com/ria9898)
   ###### [Akriti Toppo - 22121016](https://github.com/aakriti228)
 
 ### **INTRODUCTION:**
