@@ -35,8 +35,8 @@ As a Business Analyst, We have been assigned the task of designing the database 
 *  **Fine** Fine_ID , Borrow_ID , Fine_Amount , Payment_Date
 
     
-BOOK | AUTHOR | PUBLISHER
---- | --- | ---
+BOOK |       AUTHOR             | PUBLISHER
+---   | ----                    | ---
 *Book ID* | **Author ID** | *Publisher**
     
     
