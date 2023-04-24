@@ -36,59 +36,57 @@ As a Business Analyst, We have been assigned the task of designing the database 
 
         
 CREATE PROC dbo.LibraryManagementSystem
-    -> CREATE DATABASE db_LibraryManagement
-    -> CREATE TABLE Library (
-    ->     Library_ID INT PRIMARY KEY,
-    ->     Library_Name VARCHAR(255),
-    ->     Location VARCHAR(255),
-    ->     Contact_Number VARCHAR(20)
-    -> );
+     CREATE DATABASE db_LibraryManagement
+     CREATE TABLE Library (
+         Library_ID INT PRIMARY KEY,
+         Library_Name VARCHAR(255),
+         Location VARCHAR(255),
+         Contact_Number VARCHAR(20)
+     );
+ CREATE TABLE Book (Book_ID INT PRIMARY KEY,
+         Book_Price DECIMAL(10, 2),
+         Book_Title VARCHAR(255),
+         Book_Status VARCHAR(10)
+     );
 
-mysql> CREATE TABLE Book (
-    ->     Book_ID INT PRIMARY KEY,
-    ->     Book_Price DECIMAL(10, 2),
-    ->     Book_Title VARCHAR(255),
-    ->     Book_Status VARCHAR(10)
-    -> );
+ CREATE TABLE Author (
+         Author_ID INT PRIMARY KEY,
+         Author_Name VARCHAR(255),
+         Contact_Number VARCHAR(20),
+         Email VARCHAR(255)
+     );
 
-mysql> CREATE TABLE Author (
-    ->     Author_ID INT PRIMARY KEY,
-    ->     Author_Name VARCHAR(255),
-    ->     Contact_Number VARCHAR(20),
-    ->     Email VARCHAR(255)
-    -> );
 
-mysql>
-mysql> CREATE TABLE Publisher (
-    ->     Publisher_ID INT PRIMARY KEY,
-    ->     Publisher_Name VARCHAR(255),
-    ->     Contact_Number VARCHAR(20),
-    ->     Email VARCHAR(255)
-    -> );
+ CREATE TABLE Publisher (
+         Publisher_ID INT PRIMARY KEY,
+         Publisher_Name VARCHAR(255),
+         Contact_Number VARCHAR(20),
+         Email VARCHAR(255)
+     );
 
-mysql> CREATE TABLE Vendor (
-    ->     Vendor_ID INT PRIMARY KEY,
-    ->     Vendor_Name VARCHAR(255),
-    ->     Contact_Number VARCHAR(20),
-    ->     Email VARCHAR(255)
-    -> );
+ CREATE TABLE Vendor (
+         Vendor_ID INT PRIMARY KEY,
+         Vendor_Name VARCHAR(255),
+         Contact_Number VARCHAR(20),
+         Email VARCHAR(255)
+     );
 
-mysql> CREATE TABLE Member (
-    ->     Member_ID INT PRIMARY KEY,
-    ->     Member_Name VARCHAR(255),
-    ->     Contact_Number VARCHAR(20),
-    ->     Email VARCHAR(255),
-    ->     Address VARCHAR(255),
-    ->     Date_of_Joining DATE
-    -> );
+ CREATE TABLE Member (
+         Member_ID INT PRIMARY KEY,
+         Member_Name VARCHAR(255),
+         Contact_Number VARCHAR(20),
+         Email VARCHAR(255),
+         Address VARCHAR(255),
+         Date_of_Joining DATE
+     );
 
 mysql> CREATE TABLE Admin (
-    ->     Admin_ID INT PRIMARY KEY,
-    ->     Admin_Name VARCHAR(255),
-    ->     Contact_Number VARCHAR(20),
-    ->     Email VARCHAR(255),
-    ->     Password VARCHAR(255)
-    -> );
+         Admin_ID INT PRIMARY KEY,
+         Admin_Name VARCHAR(255),
+         Contact_Number VARCHAR(20),
+         Email VARCHAR(255),
+         Password VARCHAR(255)
+     );
 
 mysql> CREATE TABLE Employee (
     ->     Employee_ID INT PRIMARY KEY,
@@ -98,21 +96,21 @@ mysql> CREATE TABLE Employee (
     ->     Password VARCHAR(255)
     -> );
 
-mysql> CREATE TABLE Borrowing (
-    ->     Borrow_ID INT PRIMARY KEY,
-    ->     Member_ID INT,
-    ->     Book_ID INT,
-    ->     Borrow_Date DATE,
-    ->     Due_Date DATE,
-    ->     Return_Date DATE,
-    ->     FOREIGN KEY (Member_ID) REFERENCES Member(Member_ID),
-    ->     FOREIGN KEY (Book_ID) REFERENCES Book(Book_ID)
-    -> );
+ CREATE TABLE Borrowing (
+         Borrow_ID INT PRIMARY KEY,
+         Member_ID INT,
+         Book_ID INT,
+         Borrow_Date DATE,
+         Due_Date DATE,
+         Return_Date DATE,
+         FOREIGN KEY (Member_ID) REFERENCES Member(Member_ID),
+         FOREIGN KEY (Book_ID) REFERENCES Book(Book_ID)
+     );
 
-mysql> CREATE TABLE Fine (
-    ->     Fine_ID INT PRIMARY KEY,
-    ->     Borrow_ID INT,
-    ->     Fine_Amount DECIMAL(10, 2),
-    ->     Payment_Date DATE,
-    ->     FOREIGN KEY (Borrow_ID) REFERENCES Borrowing(Borrow_ID)
+ CREATE TABLE Fine (
+         Fine_ID INT PRIMARY KEY,
+         Borrow_ID INT,
+         Fine_Amount DECIMAL(10, 2),
+         Payment_Date DATE,
+         FOREIGN KEY (Borrow_ID) REFERENCES Borrowing(Borrow_ID)
 
