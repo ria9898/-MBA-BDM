@@ -34,7 +34,17 @@ As a Business Analyst, We have been assigned the task of designing the database 
 *  **Borrowing** Borrow_ID , Member_ID , Book_ID , Borrow_Date , Due_Date , Return_Date
 *  **Fine** Fine_ID , Borrow_ID , Fine_Amount , Payment_Date
 
-        
+    
+BOOK | AUTHOR | PUBLISHER
+--- | --- | ---
+*Book ID* | **Author ID** | *Publisher**
+    
+    
+    
+    
+    
+    
+    
               +------------+          +------------+       +------------+
               |    Book    |          |   Author   |       |  Publisher |
               +------------+          +------------+       +------------+
