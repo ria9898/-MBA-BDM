@@ -34,3 +34,29 @@ As a Business Analyst, We have been assigned the task of designing the database 
 *  **Borrowing** Borrow_ID , Member_ID , Book_ID , Borrow_Date , Due_Date , Return_Date
 *  **Fine** Fine_ID , Borrow_ID , Fine_Amount , Payment_Date
 
+          +-----------+       +--------------+      +--------------+
+          |   Book    |       |   Author     |      |   Publisher  |
+          +-----------+       +--------------+      +--------------+
+          | Book ID   |       | Author ID    |      | Publisher ID |
+          | Title     |<----+  | Name        |<--+  | Name         |
+          | ISBN      |       +--------------+      +--------------+
+          | Category  |       | Nationality |
+          | Language  |       +--------------+
+          | Pages     |
+          | Copies    |
+          +-----------+
+
+               +-----------+          +----------+           +-------------+
+               | Borrowing |          | User     |           |   Category  |
+               +-----------+          +----------+           +-------------+
+               | Borrowing|+--<  +--| User ID  |           | Category ID |
+               | Transaction|          | Name     |           | Name        |
+               | Book ID   |          | Email    |
+               | User ID   |          | Phone    |
+               | Borrowing|          | Address  |
+               | Due Date  |          +----------+
+               | Return Date|
+               | Fine      |
+               +-----------+
+
+
