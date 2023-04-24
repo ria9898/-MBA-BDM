@@ -109,7 +109,7 @@ mysql> CREATE TABLE Employee (
 
  CREATE TABLE Fine (
          Fine_ID INT PRIMARY KEY,
-         Borrow_ID INT,
+         Borrow_ID INT, 
          Fine_Amount DECIMAL(10, 2),
          Payment_Date DATE,
          FOREIGN KEY (Borrow_ID) REFERENCES Borrowing(Borrow_ID)
