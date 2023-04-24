@@ -116,7 +116,7 @@ As a Business Analyst, We have been assigned the task of designing the database 
 
         
         
-     CREATE TABLE Library (
+  CREATE TABLE Library (
          Library_ID INT PRIMARY KEY,
          Library_Name VARCHAR(255),
          Location VARCHAR(255),
