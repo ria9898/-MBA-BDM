@@ -113,4 +113,84 @@ mysql> CREATE TABLE Employee (
          Fine_Amount DECIMAL(10, 2),
          Payment_Date DATE,
          FOREIGN KEY (Borrow_ID) REFERENCES Borrowing(Borrow_ID)
+         
+              +------------+          +------------+       +------------+
+              |    Book    |          |   Author   |       |  Publisher |
+              +------------+          +------------+       +------------+
+              | Book_ID    |          | Author_ID  |       | Publisher_ |
+              | Book_Title |<---+     | Author_Nam|<--+   | Name       |
+              | Book_Price|          | Contact_Nu|       | Contact_Nu |
+              | Book_Status|          | Email     |       | Email      |
+              +------------+          +------------+       +------------+
+                      |                      |                    |
+                      |                      |                    |
+                      |                      |                    |
+                      |                      |                    |
+              +------------+     +------------+                    |
+              |    Vendor  |     |  Category  |                    |
+              +------------+     +------------+                    |
+              | Vendor_ID  |     | Category_I|<-------------------+
+              | Vendor_Nam|     | Category_N|
+              | Contact_Nu|     |            |
+              | Address   |     |            |
+              +------------+     +------------+
+
+                      |                     |
+                      |                     |
+                      |                     |
+                      |                     |
+              +------------+     +------------+
+              |   Member   |     |    Admin   |
+              +------------+     +------------+
+              | Member_ID  |     | Admin_ID   |
+              | Member_Nam|     | Admin_Nam |
+              | Contact_Nu|     | Contact_Nu|
+              | Email     |     | Email     |
+              | Address   |     | Password  |
+              | Date_of_Jo|     +------------+
+              +------------+
+
+                      |
+                      |
+                      |
+                      |
+              +------------+
+              |   Employee |
+              +------------+
+              | Employee_I|
+              | Employee_N|
+              | Contact_N|
+              | Email     |
+              | Password  |
+              +------------+
+
+                      |
+                      |
+                      |
+                      |
+              +------------+
+              |  Borrowing |
+              +------------+
+              | Borrow_ID  |
+              | Borrow_Dat|
+              | Due_Date  |
+              | Return_Dat|
+              | Fine      |
+              | Member_ID |
+              | Book_ID   |
+              +------------+
+
+                      |
+                      |
+                      |
+                      |
+              +------------+
+              |    Fine    |
+              +------------+
+              | Fine_ID    |
+              | Borrow_ID  |
+              | Fine_Amount|
+              | Payment_Da|
+              +------------+
+
  
