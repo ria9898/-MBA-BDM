@@ -27,7 +27,7 @@ As a Business Analyst, We have been assigned the task of designing the database 
 *  **Book** Book_ID , Book_Price , Book_Title , Book_Status
 *  **Author** Author_ID , Author_Name , Contact_Number , Email
 *  **Publisher** Publisher_ID , Publisher_Name , Contact_Number , Email
-*  **Vendor** Vendor_ID , Vendor_Name , Contact_Number , Email
+*  **Vendor** Vendor_ID , Vendor_Name , Contact_Number , Address
 *  **Member** Member_ID , Member_Name , Contact_Number , Email , Address , Date_of_Joining
 *  **Admin** Admin_ID , Admin_Name , Contact_Number , Email , Password
 *  **Employee** Employee_ID , Employee_Name , Contact_Number , Email , Password
