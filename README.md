@@ -25,13 +25,13 @@ As a Business Analyst, We have been assigned the task of designing the database 
 #### **Attributes:**
 *  **Library** Library_ID , Library_Name , Location , Contact_Number 
 *  **Book** Book_ID , Book_Price , Book_Title , Book_Status
-*  **Author** Author_ID , Author_Name , Contact_Number , Email
+*  **Author** Author_ID , Author_Name ,Author_Subject ,Contact_Number 
 *  **Publisher** Publisher_ID , Publisher_Name , Contact_Number , Email
 *  **Vendor** Vendor_ID , Vendor_Name , Contact_Number , Address
 *  **Member** Member_ID , Member_Name , Contact_Number , Email , Address , Date_of_Joining
 *  **Admin** Admin_ID , Admin_Name , Contact_Number , Email , Password
-*  **Employee** Employee_ID , Employee_Name , Contact_Number , Email , Password
-*  **Borrowing** Borrow_ID , Member_ID , Book_ID , Borrow_Date , Due_Date , Return_Date
+*  **Employee** Employee_ID , Employee_Name , Contact_Number
+*  **Borrowing** Borrow_ID, Member_ID , Book_ID , Borrow_Date , Due_Date , Return_Date
 *  **Fine** Fine_ID , Borrow_ID , Fine_Amount , Payment_Date
 
     
