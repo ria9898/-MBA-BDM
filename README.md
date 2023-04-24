@@ -35,26 +35,26 @@ As a Business Analyst, We have been assigned the task of designing the database 
 *  **Fine** Fine_ID , Borrow_ID , Fine_Amount , Payment_Date
 
         
-         +------------+          +------------+       +------------+
+              +------------+          +------------+       +------------+
               |    Book    |          |   Author   |       |  Publisher |
               +------------+          +------------+       +------------+
               | Book_ID    |          | Author_ID  |       | Publisher_ |
-              | Book_Title |<---+     | Author_Nam|<--+   | Name       |
-              | Book_Price|          | Contact_Nu|       | Contact_Nu |
-              | Book_Status|          | Email     |       | Email      |
+              | Book_Title |<---+     | Author_Name|<--+   | Name       |
+              | Book_Price |          | Contact_Nu |       | Contact_Nu |
+              | Book_Status|          | Email      |       | Email      |
               +------------+          +------------+       +------------+
                       |                      |                    |
                       |                      |                    |
                       |                      |                    |
                       |                      |                    |
-              +------------+     +------------+                    |
-              |    Vendor  |     |  Category  |                    |
-              +------------+     +------------+                    |
-              | Vendor_ID  |     | Category_I|<-------------------+
-              | Vendor_Nam|     | Category_N|
-              | Contact_Nu|     |            |
-              | Address   |     |            |
-              +------------+     +------------+
+              +------------+      +------------+                  |
+              |    Vendor  |      |  Category  |                  |
+              +------------+      +------------+                  |
+              | Vendor_ID  |      | Category_I |<-----------------+
+              | Vendor_Name|      | Category_N |
+              | Contact_Nu |      |            |
+              | Address    |      |            |
+              +------------+      +------------+
 
                       |                     |
                       |                     |
@@ -64,11 +64,11 @@ As a Business Analyst, We have been assigned the task of designing the database 
               |   Member   |     |    Admin   |
               +------------+     +------------+
               | Member_ID  |     | Admin_ID   |
-              | Member_Nam|     | Admin_Nam |
-              | Contact_Nu|     | Contact_Nu|
-              | Email     |     | Email     |
-              | Address   |     | Password  |
-              | Date_of_Jo|     +------------+
+              | Member_Nam|      | Admin_Name |
+              | Contact_Nu|      | Contact_Nu |
+              | Email     |      | Email      |
+              | Address   |      | Password   |
+              | Date_of_Jo|      +------------+
               +------------+
 
                       |
@@ -80,7 +80,7 @@ As a Business Analyst, We have been assigned the task of designing the database 
               +------------+
               | Employee_I|
               | Employee_N|
-              | Contact_N|
+              | Contact_N |
               | Email     |
               | Password  |
               +------------+
@@ -92,7 +92,7 @@ As a Business Analyst, We have been assigned the task of designing the database 
               +------------+
               |  Borrowing |
               +------------+
-              | Borrow_ID  |
+              | Borrow_ID |
               | Borrow_Dat|
               | Due_Date  |
               | Return_Dat|
@@ -111,7 +111,7 @@ As a Business Analyst, We have been assigned the task of designing the database 
               | Fine_ID    |
               | Borrow_ID  |
               | Fine_Amount|
-              | Payment_Da|
+              | Payment_Dat|
               +------------+
 
         
