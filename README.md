@@ -38,6 +38,22 @@ As a Business Analyst, We have been assigned the task of designing the database 
 ### **ER DIAGRAM:** 
 ![ER DIAGRAM](https://user-images.githubusercontent.com/126074369/234172039-74566170-1ba1-412d-befe-305ea053733c.png)
 
+
+**TABLE : Library**
+
+| Library_ID |        Book_Title         | BOOK Price |   BOOK Status |
+|------------|---------------------------|------------|---------------|
+| 23455   |  Research Methodology     |500/-       | Available     |
+| 23545   |  Organizational Behaviour |980/-       | Not Available |
+| 455478  |  Data Analysis            |1400/-      | Not Available |
+| 345678  |  Financial Management     |400/-       | Available     |
+| 455478  |  Marketing Analytics      |1200/-      | Not Available |
+
+
+
+
+
+
 **TABLE : Book**
 
 | Book_ID |        Book_Title         | BOOK Price |   BOOK Status |
@@ -49,10 +65,15 @@ As a Business Analyst, We have been assigned the task of designing the database 
 | 455478  |  Marketing Analytics      |1200/-      | Not Available |
 
 
-**TABLE : WISHLIST**
+**TABLE : Author**
 
-|WISHLIST_ID | DATE_CREATED |
-|------------|--------------|
+| Author_ID |       Author_Name      | Contact No |  Author Subject |
+|-----------|------------------------|------------|-----------------|
+| 46587     |  C.R. Kothari          |284839283   |Research         |
+| 12389     |  Stephen P. Robbins    |374828742   | Management      |
+| 42308     |  Miachel S.            |273291247   |Computer Science |
+| 32568     |  D.K. Goel             |284656289   | Finance         |
+| 46878     | Mark Jeffery           |713627414   | Marketing       |
 
 
 **TABLE : PROMOTION**
