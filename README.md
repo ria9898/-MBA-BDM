@@ -41,16 +41,13 @@ As a Business Analyst, We have been assigned the task of designing the database 
 
 **TABLE : Library**
 
-| Library_ID |        Book_Title         | BOOK Price |   BOOK Status |
-|------------|---------------------------|------------|---------------|
-| 23455   |  Research Methodology     |500/-       | Available     |
-| 23545   |  Organizational Behaviour |980/-       | Not Available |
-| 455478  |  Data Analysis            |1400/-      | Not Available |
-| 345678  |  Financial Management     |400/-       | Available     |
-| 455478  |  Marketing Analytics      |1200/-      | Not Available |
-
-
-
+| Library_ID |        Library_Name  | Location     |  Contact No. |
+|------------|----------------------|--------------|--------------|
+| 236746     |  Blossom Library     |Portofino     | 2362538846   |
+| 124364     |  Grand Library       |Dasve         | 9786453427   |
+| 844584     |  Osprey Library      |Hill View     | 1836715235   |
+| 909767     |  Empress Library     |School Street | 9236834967   |
+| 547748     |  Techno Library      |Thicket Street| 0993761361   |
 
 
 
@@ -76,12 +73,23 @@ As a Business Analyst, We have been assigned the task of designing the database 
 | 46878     | Mark Jeffery           |713627414   | Marketing       |
 
 
-**TABLE : PROMOTION**
+**TABLE : Publisher**
 
-|PROMOTION_ID | START_DATE | END_DATE | DISCOUNT_PERCENTAGE |
-|-------------|------------|----------|---------------------|
+|Publisher_ID  | Publisher_Name          | Contact_Number   | Email                        |
+|--------------|-------------------------|------------------|------------------------------|
+| 97757        |  Rishi Shah             |284839283         |rishi.shah@gmail.com          |
+| 97875        |  Stephen lawrence       |374828742         |Lawrence.1212@gmail.com       |
+| 97566        |  R.S Studio             |273291247         |r.sstudio@gmail.com           |
+| 99643        |  Goel publishing House  |284656289         |goelhouse.publisher@gmail.com |
+| 92467        | Philips Kolter          |713627414         |kolterhouse@gmail.com         |
       
-         |        Book   | Author         |Publisher        |                                
+        
+        
+        
+        
+        
+        
+        |        Book   | Author         |Publisher        |                                
          | ------------- |:-------------: | -----------:    |
          | Book ID       |  Author_ID     |Publisher ID     |
          | Book Title    |   Author Name  |Publisher Name   |
