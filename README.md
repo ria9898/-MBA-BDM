@@ -34,25 +34,52 @@ As a Business Analyst, We have been assigned the task of designing the database 
 *  **Borrowing** Borrow_ID, Member_ID , Book_ID , Borrow_Date , Due_Date , Return_Date
 *  **Fine** Fine_ID , Borrow_ID , Fine_Amount , Payment_Date
 
+
+### **ER DIAGRAM:** 
+![ER DIAGRAM](https://user-images.githubusercontent.com/126074369/234172039-74566170-1ba1-412d-befe-305ea053733c.png)
+
+
+
+
+
+
+         |        Book   | Author         |Publisher        |                                
+         | ------------- |:-------------: | -----------:    |
+         | Book ID       |  Author_ID     |Publisher ID     |
+         | Book Title    |   Author Name  |Publisher Name   |
+         | Book Price    |   Contact No   |Contact No       |
+         |Book Status    | Author Subject |Email ID         |
+ 
+ 
+ 
+ 
+
+|     Vendor    | Member             |Admin             |                                
+| ------------- |:-------------:     | -----:           |
+| Vendor ID     |  Member_ID         |Admin  ID         |
+|   Vendor Name |  Member Name       |  Admin   Name    |
+| Contact No    |   Contact No       |Contact No        |
+|Address        | Email ID           |Email ID          |
+|               |Date of Joining     |  Password        |
+
+
+
+
+
     
-BOOK |       AUTHOR             | PUBLISHER
----   | ----                    | ---
-*Book ID* | **Author ID** | *Publisher**
     
     
     
     
     
-    
-    
-              +------------+          +------------+       +------------+
-              |    Book    |          |   Author   |       |  Publisher |
-              +------------+          +------------+       +------------+
-              | Book_ID    |          | Author_ID  |       | Publisher_ |
-              | Book_Title |<---+     | Author_Name|<--+   | Name       |
-              | Book_Price |          | Contact_Nu |       | Contact_Nu |
-              | Book_Status|          | Email      |       | Email      |
-              +------------+          +------------+       +------------+
+              +------------+          +------------+       +-------------- +
+              |    Book    |          |   Author   |       |  Publisher    |
+              +------------+          +------------+       +-------------- +
+              | Book_ID    |          | Author_ID  |       | Publisher ID  |
+              | Book_Title |<---+     | Author_Name|<--+   | Publisher Name|
+              | Book_Price |          | Contact No |       | Contact No    |
+              | Book_Status|          | Email ID   |       | Email  ID     |
+              +------------+          +------------+       +---------------+
                       |                      |                    |
                       |                      |                    |
                       |                      |                    |
@@ -60,9 +87,9 @@ BOOK |       AUTHOR             | PUBLISHER
               +------------+      +------------+                  |
               |    Vendor  |      |  Category  |                  |
               +------------+      +------------+                  |
-              | Vendor_ID  |      | Category_I |<-----------------+
-              | Vendor_Name|      | Category_N |
-              | Contact_Nu |      |            |
+              | Vendor ID  |      | Category_I |<-----------------+
+              | Vendor Name|      | Category_N |
+              | Contact No |      |            |
               | Address    |      |            |
               +------------+      +------------+
 
@@ -74,11 +101,11 @@ BOOK |       AUTHOR             | PUBLISHER
               |   Member   |     |    Admin   |
               +------------+     +------------+
               | Member_ID  |     | Admin_ID   |
-              | Member_Nam|      | Admin_Name |
-              | Contact_Nu|      | Contact_Nu |
-              | Email     |      | Email      |
-              | Address   |      | Password   |
-              | Date_of_Jo|      +------------+
+              | Member_Nam |      | Admin_Name |
+              | Contact_Nu |      | Contact_Nu |
+              | Email      |      | Email      |
+              | Address    |      | Password   |
+              | Date_of_Jo |      +------------+
               +------------+
 
                       |
