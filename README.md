@@ -35,11 +35,11 @@ As a Business Analyst, We have been assigned the task of designing the database 
 *  **Fine** Fine_ID , Borrow_ID , Fine_Amount , Payment_Date
 
 
-### **ER DIAGRAM:** 
+### **ENTITY RELATIONSHIP DIAGRAM FOR LIBRARY MANAGEMENT SYSTEM:** 
 ![ER DIAGRAM](https://user-images.githubusercontent.com/126074369/234172039-74566170-1ba1-412d-befe-305ea053733c.png)
 
 
-### **TABLE FORM OF ER DIAGRAM:**
+### **CONVERTING THE ER DIAGRAM INTO TABLE:**
 
 **TABLE : LIBRARY**
 
