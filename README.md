@@ -40,9 +40,7 @@ As a Business Analyst, We have been assigned the task of designing the database 
 
 
 
-
-
-
+      
          |        Book   | Author         |Publisher        |                                
          | ------------- |:-------------: | -----------:    |
          | Book ID       |  Author_ID     |Publisher ID     |
@@ -50,10 +48,10 @@ As a Business Analyst, We have been assigned the task of designing the database 
          | Book Price    |   Contact No   |Contact No       |
          |Book Status    | Author Subject |Email ID         |
  
- 
- 
- 
-
+         
+         
+         
+         
 |     Vendor    | Member             |Admin             |                                
 | ------------- |:-------------:     | -----:           |
 | Vendor ID     |  Member_ID         |Admin  ID         |
@@ -62,8 +60,28 @@ As a Business Analyst, We have been assigned the task of designing the database 
 |Address        | Email ID           |Email ID          |
 |               |Date of Joining     |  Password        |
 
+    
+ 
 
 
+
+
+
+    
+    
+    
+    
+    
+    
+    
+         |        Book   | Author         |Publisher        |                                
+         | ------------- |:-------------: | -----------:    |
+         | Book ID       |  Author_ID     |Publisher ID     |
+         | Book Title    |   Author Name  |Publisher Name   |
+         | Book Price    |   Contact No   |Contact No       |
+         |Book Status    | Author Subject |Email ID         |
+ 
+ 
 
 
     
