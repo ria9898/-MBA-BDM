@@ -41,7 +41,7 @@ As a Business Analyst, We have been assigned the task of designing the database 
 
 ### **TABLE FORM OF ER DIAGRAM:**
 
-**TABLE : Library**
+**TABLE : LIBRARY**
 
 | Library_ID |        Library_Name  | Location     |  Contact No. |
 |------------|----------------------|--------------|--------------|
@@ -53,7 +53,7 @@ As a Business Analyst, We have been assigned the task of designing the database 
 
 
 
-**TABLE : Book**
+**TABLE : BOOK**
 
 | Book_ID |        Book_Title         | BOOK Price |   BOOK Status |
 |---------|---------------------------|------------|---------------|
@@ -75,7 +75,7 @@ As a Business Analyst, We have been assigned the task of designing the database 
 | 46878     | Mark Jeffery           |713627414   | Marketing       |
 
 
-**TABLE : Publisher**
+**TABLE : PUBLISHER**
 
 |Publisher_ID  | Publisher_Name          | Contact_Number   | Email                        |
 |--------------|-------------------------|------------------|------------------------------|
@@ -86,7 +86,7 @@ As a Business Analyst, We have been assigned the task of designing the database 
 | 92467        |  Philips Kolter         |713627414         |kolterhouse@gmail.com         |
       
         
-  **TABLE : Vendor**
+  **TABLE : VENDOR**
 
 |Vendor_ID     | Vendor_Name            | Contact_Number   | Address    |
 |--------------|------------------------|------------------|------------|
@@ -98,7 +98,7 @@ As a Business Analyst, We have been assigned the task of designing the database 
  
  
  
-  **TABLE : Member**      
+  **TABLE : MEMBER**      
         
 |Member_ID     | Member_Name       | Contact_Number   | Address    |   Email                     | Date_of_Joining  |
 |--------------|-------------------|------------------|------------|-----------------------------|------------------|
@@ -110,7 +110,7 @@ As a Business Analyst, We have been assigned the task of designing the database 
  
 
 
-  **TABLE : Admin**      
+  **TABLE : ADMIN**      
         
 |Admin_ID      | Admin_Name         | Contact_Number  | Email                    |  Password       |
 |--------------|-------------------|------------------|--------------------------|-----------------|
@@ -122,7 +122,7 @@ As a Business Analyst, We have been assigned the task of designing the database 
  
    
  
-  **TABLE : Employee**      
+  **TABLE : EMPLOYEE**      
         
 |Employee_ID   |Employee_Name         | Contact_Number   |
 |--------------|----------------------|------------------|
@@ -133,7 +133,7 @@ As a Business Analyst, We have been assigned the task of designing the database 
 |60321         |Abhilash Shaji        |5688292914        |
     
     
- **TABLE : Borrowing**      
+ **TABLE : BORROWING**      
         
 |Borrow_ID     |  BOOK_ID     | Member_ID   | Borrow_date  | Due_date    | Return_date |
 |--------------|--------------|-------------|--------------|-------------|-------------|
@@ -144,7 +144,7 @@ As a Business Analyst, We have been assigned the task of designing the database 
 |238912        | 9887882      |6428462      | 08-01-2023   |  22-01-2023 | 04-02-2023  |   
        
 
- **TABLE :Fine**
+ **TABLE :FINE**
 
 | Fine_ID | Borrow_ID | Fine_Amount | Payment_Date   |
 |---------|-----------|-------------|----------------|
@@ -159,7 +159,9 @@ As a Business Analyst, We have been assigned the task of designing the database 
  
  ### **SQL COMMAND:**
  
-        
+    
+    
+    
   CREATE TABLE Library (
          Library_ID INT PRIMARY KEY,
          Library_Name VARCHAR(255),
