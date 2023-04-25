@@ -39,6 +39,8 @@ As a Business Analyst, We have been assigned the task of designing the database 
 ![ER DIAGRAM](https://user-images.githubusercontent.com/126074369/234172039-74566170-1ba1-412d-befe-305ea053733c.png)
 
 
+### **TABLE FORM OF ER DIAGRAM:**
+
 **TABLE : Library**
 
 | Library_ID |        Library_Name  | Location     |  Contact No. |
@@ -153,8 +155,10 @@ As a Business Analyst, We have been assigned the task of designing the database 
 | 547748  | 196319    |  750        |  04-02-2023    |
 
             
-        
-**SQL Command**     
+ 
+ 
+ ### **SQL COMMAND:**
+ 
         
   CREATE TABLE Library (
          Library_ID INT PRIMARY KEY,
