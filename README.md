@@ -211,8 +211,6 @@ mysql> CREATE TABLE Employee (
     ->     Employee_ID INT PRIMARY KEY,
     ->     Employee_Name VARCHAR(255),
     ->     Contact_Number VARCHAR(20),
-    ->     Email VARCHAR(255),
-    ->     Password VARCHAR(255)
     -> );
 
  CREATE TABLE Borrowing (
