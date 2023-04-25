@@ -118,8 +118,7 @@ As a Business Analyst, We have been assigned the task of designing the database 
 |28311733      | Ansh Singh        |8669902203        |ansh.acv@gmail.com        |    xcv@34:e3    |
 |98643612      | Akshat Kumar      |5688292914        |Akshat.qwerk@gmail.com    |    Life24*7     |
  
-    
- 
+   
  
   **TABLE : Employee**      
         
@@ -132,24 +131,30 @@ As a Business Analyst, We have been assigned the task of designing the database 
 |60321         |Abhilash Shaji        |5688292914        |
     
     
- **TABLE : Member**      
+ **TABLE : Borrowing**      
         
-|Borrow_ID     |  BOOK_ID     | Member_ID   | Borrow_date  | Due_date  | Return_date|
-|--------------|--------------|-------------|--------------|-----------|------------|
-|834683        | 2736429      |2728723      | 14-02-2023   |           |            |
-|934645        | 8272905      |9237191      |         |           |            |
-|196319        | 9612356      |1837199      |Patna         |           |            | 
-|923299        | 1927010      |6432123      |Gujarat       |           |            |
-|238912        | 9887882      |6428462      |Rajasthan     |           |            |   
+|Borrow_ID     |  BOOK_ID     | Member_ID   | Borrow_date  | Due_date    | Return_date |
+|--------------|--------------|-------------|--------------|-------------|-------------|
+|834683        | 2736429      |2728723      | 14-02-2023   |  28-02-2023 | 03-03-2023  |
+|934645        | 8272905      |9237191      | 20-03-2023   |  04-04-2023 | 03-04-2023  |
+|196319        | 9612356      |1837199      | 25-02-2023   |  09-03-2023 | 12-03-2023  | 
+|923299        | 1927010      |6432123      | 17-03-2023   |  31-03-2023 | 05-04-2023  |
+|238912        | 9887882      |6428462      | 08-01-2023   |  22-01-2023 | 04-02-2023  |   
        
+
+ **TABLE :Fine**
+
+| Fine_ID | Borrow_ID | Fine_Amount | Payment_Date   |
+|---------|-----------|-------------|----------------|
+| 236746  | 834683    |  250        |  03-03-2023    |  
+| 124364  | 934645    |  50         |  03-04-2023    |
+| 844584  | 238912    |  150        |  12-03-2023    |
+| 909767  | 923299    |  400        |  05-04-2023    |
+| 547748  | 196319    |  750        |  04-02-2023    |
+
+            
         
-        
-        
-        
-        
-        
-        
-        
+**SQL Command**     
         
   CREATE TABLE Library (
          Library_ID INT PRIMARY KEY,
