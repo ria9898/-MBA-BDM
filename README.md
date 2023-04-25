@@ -38,8 +38,27 @@ As a Business Analyst, We have been assigned the task of designing the database 
 ### **ER DIAGRAM:** 
 ![ER DIAGRAM](https://user-images.githubusercontent.com/126074369/234172039-74566170-1ba1-412d-befe-305ea053733c.png)
 
+**TABLE : Book**
+
+| Book_ID |        Book_Title         | BOOK Price |   BOOK Status |
+|---------|---------------------------|------------|---------------|
+| 23455   |  Research Methodology     |500/-       | Available     |
+| 23545   |  Organizational Behaviour |980/-       | Not Available |
+| 455478  |  Data Analysis            |1400/-      | Not Available |
+| 345678  |  Financial Management     |400/-       | Available     |
+| 455478  |  Marketing Analytics      |1200/-      | Not Available |
 
 
+**TABLE : WISHLIST**
+
+|WISHLIST_ID | DATE_CREATED |
+|------------|--------------|
+
+
+**TABLE : PROMOTION**
+
+|PROMOTION_ID | START_DATE | END_DATE | DISCOUNT_PERCENTAGE |
+|-------------|------------|----------|---------------------|
       
          |        Book   | Author         |Publisher        |                                
          | ------------- |:-------------: | -----------:    |
