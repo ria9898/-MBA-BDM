@@ -1,7 +1,7 @@
 # MBA-BDM
 
  ###### [Riya Singh - 22121003](https://github.com/ria9898)
-  ###### [Akriti Toppo - 22121016](https://github.com/aakriti228)
+ ###### [Akriti Toppo - 22121016](https://github.com/aakriti228)
 
 ### **INTRODUCTION:**
 
@@ -81,142 +81,74 @@ As a Business Analyst, We have been assigned the task of designing the database 
 | 97875        |  Stephen lawrence       |374828742         |Lawrence.1212@gmail.com       |
 | 97566        |  R.S Studio             |273291247         |r.sstudio@gmail.com           |
 | 99643        |  Goel publishing House  |284656289         |goelhouse.publisher@gmail.com |
-| 92467        | Philips Kolter          |713627414         |kolterhouse@gmail.com         |
+| 92467        |  Philips Kolter         |713627414         |kolterhouse@gmail.com         |
       
         
-        
-        
-        
-        
-        
-        |        Book   | Author         |Publisher        |                                
-         | ------------- |:-------------: | -----------:    |
-         | Book ID       |  Author_ID     |Publisher ID     |
-         | Book Title    |   Author Name  |Publisher Name   |
-         | Book Price    |   Contact No   |Contact No       |
-         |Book Status    | Author Subject |Email ID         |
- 
-         
-         
-         
-         
-|     Vendor    | Member             |Admin             |                                
-| ------------- |:-------------:     | -----:           |
-| Vendor ID     |  Member_ID         |Admin  ID         |
-|   Vendor Name |  Member Name       |  Admin   Name    |
-| Contact No    |   Contact No       |Contact No        |
-|Address        | Email ID           |Email ID          |
-|               |Date of Joining     |  Password        |
+  **TABLE : Vendor**
 
-    
+|Vendor_ID     | Vendor_Name            | Contact_Number   | Address    |
+|--------------|------------------------|------------------|------------|
+| 463486       |  Alankar Shah          |813672738         |Nagpur      |
+| 937583       |  Shankar Agarwal       |237628386         |Delhi       |
+| 737542       |  Umakant Book Store    |768636732         |Gujarat     |
+| 246291       | Crossword Enterprise   |328782731         |Mumbai      |
+| 932468       | Khushwant Singh        |877672167         |Pune        |      
+ 
+ 
+ 
+  **TABLE : Member**      
+        
+|Member_ID     | Member_Name       | Contact_Number   | Address    |   Email                     | Date_of_Joining  |
+|--------------|-------------------|------------------|------------|-----------------------------|------------------|
+|2728723       | Khushi Awasthi    |286289667         |Pune        | Khushi.awasthi@gmail.com    |   12-03-2020     |
+|8786762       | Richa Singh       |128128629         |Delhi       | richi.rich@gmail.com        |   01-01-2021     |
+|3863829       | Janet Joy         |989768611         |Patna       | janet.joy@yahoo.com         |   15-06-2020     | 
+|3246291       | Anshu Singh       |912378982         |Gujarat     | acv.coc@yahoo.com           |   30-03-2022     |
+|2332468       | Mayank Meet       |812167980         |Rajasthan   | mayankmeet.3456@gmail.com   |   10-10-2021     |
  
 
 
-
-
-
+  **TABLE : Admin**      
+        
+|Admin_ID      | Admin_Name         | Contact_Number  | Email                    |  Password       |
+|--------------|-------------------|------------------|--------------------------|-----------------|
+|92371947      | Eesha Gupta       |9389137181        |eesha.gupta @yahoo.com    |    q1w2e3r      |
+|08497482      | Radha Singh       |9237218189        |radha0909@gmail.com       |    o9i8u7y6     |
+|82372891      | Rispa Maria       |9124563728        |rizpa.maria@yahoo.com     |    g5h6jfd3d    | 
+|28311733      | Ansh Singh        |8669902203        |ansh.acv@gmail.com        |    xcv@34:e3    |
+|98643612      | Akshat Kumar      |5688292914        |Akshat.qwerk@gmail.com    |    Life24*7     |
+ 
     
-    
-    
-    
-    
-    
-    
-         |        Book   | Author         |Publisher        |                                
-         | ------------- |:-------------: | -----------:    |
-         | Book ID       |  Author_ID     |Publisher ID     |
-         | Book Title    |   Author Name  |Publisher Name   |
-         | Book Price    |   Contact No   |Contact No       |
-         |Book Status    | Author Subject |Email ID         |
  
  
-
-
+  **TABLE : Employee**      
+        
+|Employee_ID   |Employee_Name         | Contact_Number   |
+|--------------|----------------------|------------------|
+|27482         |Gangu Ram             |9389137181        |
+|10987         |shikhar Kumar         |9237218189        |
+|90876         |Wilson                |9124563728        | 
+|20673         |Santosh Kumar Singh   |8669902203        |
+|60321         |Abhilash Shaji        |5688292914        |
     
     
-    
-    
-    
-    
-              +------------+          +------------+       +-------------- +
-              |    Book    |          |   Author   |       |  Publisher    |
-              +------------+          +------------+       +-------------- +
-              | Book_ID    |          | Author_ID  |       | Publisher ID  |
-              | Book_Title |<---+     | Author_Name|<--+   | Publisher Name|
-              | Book_Price |          | Contact No |       | Contact No    |
-              | Book_Status|          | Email ID   |       | Email  ID     |
-              +------------+          +------------+       +---------------+
-                      |                      |                    |
-                      |                      |                    |
-                      |                      |                    |
-                      |                      |                    |
-              +------------+      +------------+                  |
-              |    Vendor  |      |  Category  |                  |
-              +------------+      +------------+                  |
-              | Vendor ID  |      | Category_I |<-----------------+
-              | Vendor Name|      | Category_N |
-              | Contact No |      |            |
-              | Address    |      |            |
-              +------------+      +------------+
-
-                      |                     |
-                      |                     |
-                      |                     |
-                      |                     |
-              +------------+     +------------+
-              |   Member   |     |    Admin   |
-              +------------+     +------------+
-              | Member_ID  |     | Admin_ID   |
-              | Member_Nam |      | Admin_Name |
-              | Contact_Nu |      | Contact_Nu |
-              | Email      |      | Email      |
-              | Address    |      | Password   |
-              | Date_of_Jo |      +------------+
-              +------------+
-
-                      |
-                      |
-                      |
-                      |
-              +------------+
-              |   Employee |
-              +------------+
-              | Employee_I|
-              | Employee_N|
-              | Contact_N |
-              | Email     |
-              | Password  |
-              +------------+
-
-                      |
-                      |
-                      |
-                      |
-              +------------+
-              |  Borrowing |
-              +------------+
-              | Borrow_ID |
-              | Borrow_Dat|
-              | Due_Date  |
-              | Return_Dat|
-              | Fine      |
-              | Member_ID |
-              | Book_ID   |
-              +------------+
-
-                      |
-                      |
-                      |
-                      |
-              +------------+
-              |    Fine    |
-              +------------+
-              | Fine_ID    |
-              | Borrow_ID  |
-              | Fine_Amount|
-              | Payment_Dat|
-              +------------+
-
+ **TABLE : Member**      
+        
+|Borrow_ID     |  BOOK_ID     | Member_ID   | Borrow_date  | Due_date  | Return_date|
+|--------------|--------------|-------------|--------------|-----------|------------|
+|834683        | 2736429      |2728723      | 14-02-2023   |           |            |
+|934645        | 8272905      |9237191      |         |           |            |
+|196319        | 9612356      |1837199      |Patna         |           |            | 
+|923299        | 1927010      |6432123      |Gujarat       |           |            |
+|238912        | 9887882      |6428462      |Rajasthan     |           |            |   
+       
+        
+        
+        
+        
+        
+        
+        
         
         
   CREATE TABLE Library (
