@@ -1,6 +1,6 @@
 
 CREATE DATABASE;
-
+USE LIBRARY;
 CREATE TABLE Library (
          Library_ID INT PRIMARY KEY,
          Library_Name VARCHAR(255),
@@ -43,8 +43,7 @@ CREATE TABLE Library (
          Address VARCHAR(255),
          Date_of_Joining DATE
      );
-
-mysql> CREATE TABLE Admin (
+ CREATE TABLE Admin (
          Admin_ID INT PRIMARY KEY,
          Admin_Name VARCHAR(255),
          Contact_Number VARCHAR(20),
@@ -52,11 +51,11 @@ mysql> CREATE TABLE Admin (
          Password VARCHAR(255)
      );
 
-mysql> CREATE TABLE Employee (
-    ->     Employee_ID INT PRIMARY KEY,
-    ->     Employee_Name VARCHAR(255),
-    ->     Contact_Number VARCHAR(20),
-    -> );
+ CREATE TABLE Employee (
+        Employee_ID INT PRIMARY KEY,
+         Employee_Name VARCHAR(255),
+         Contact_Number VARCHAR(20),
+     );
 
  CREATE TABLE Borrowing (
          Borrow_ID INT PRIMARY KEY,
@@ -75,3 +74,4 @@ mysql> CREATE TABLE Employee (
          Fine_Amount DECIMAL(10, 2),
          Payment_Date DATE,
          FOREIGN KEY (Borrow_ID) REFERENCES Borrowing(Borrow_ID)
+         );
