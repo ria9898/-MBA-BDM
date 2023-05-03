@@ -1,4 +1,7 @@
- CREATE TABLE Library (
+
+CREATE DATABASE;
+
+CREATE TABLE Library (
          Library_ID INT PRIMARY KEY,
          Library_Name VARCHAR(255),
          Location VARCHAR(255),
