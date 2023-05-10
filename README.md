@@ -93,7 +93,7 @@ EX:
 EX:
 |ADDRESS_ID| Vendor_ID  |  Member_ID  |      BUILDING_NO       | FIRST_LINE| SECOND_LINE| PINCODE|
 |----------|------------|-------------|------------------------|-----------|------------|--------|
-|   01     |CUST001     |             |         123            |  Main     |    St      |  600098|
+|   01     |  737542    |   3246296   |         123            |  Main     |    St      |  600098|
 <br>
 <br>
 
