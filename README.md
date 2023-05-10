@@ -215,7 +215,7 @@ EX:
 <br>
 <br>
 
-**TAGLE :Employee**
+**TABLE :Employee**
 
 <pre>Employee_ID      : INT PRIMARY KEY </pre>
 <pre>Employee_Name    : VARCHAR </pre>
