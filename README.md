@@ -19,7 +19,7 @@ As a Business Analyst, We have been assigned the task of designing the database 
 *  **Admin** Admin_ID , Admin_Name , Contact_Number , Email , Password
 *  **Employee** Employee_ID , Employee_Name , Contact_Number
 *  **Borrowing** Borrow_ID, Member_ID , Book_ID , Borrow_Date , Due_Date , Return_Date
-*  **Fine** Fine_ID , Borrow_ID , Fine_Amount , Payment_Date
+*  **Fine** Fine_ID , Borrow_ID ,Member_ID, Fine_Amount , Payment_Date
 
 
 #### **Entities:**
@@ -46,90 +46,13 @@ As a Business Analyst, We have been assigned the task of designing the database 
 
 ### **CONVERTING THE ER DIAGRAM INTO TABLE:**
 
-  CREATE TABLE Library (
-         Library_ID INT PRIMARY KEY,
-         Library_Name VARCHAR(255),
-         Location VARCHAR(255),
-         Contact_Number VARCHAR(20)
-     );
- CREATE TABLE Book (Book_ID INT PRIMARY KEY,
-         Book_Price DECIMAL(10, 2),
-         Book_Title VARCHAR(255),
-         Book_Status VARCHAR(10)
-     );
-
- CREATE TABLE Author (
-         Author_ID INT PRIMARY KEY,
-         Author_Name VARCHAR(255),
-         Contact_Number VARCHAR(20),
-         Email VARCHAR(255)
-     );
-
-
- CREATE TABLE Publisher (
-         Publisher_ID INT PRIMARY KEY,
-         Publisher_Name VARCHAR(255),
-         Contact_Number VARCHAR(20),
-         Email VARCHAR(255)
-     );
-
- CREATE TABLE Vendor (
-         Vendor_ID INT PRIMARY KEY,
-         Vendor_Name VARCHAR(255),
-         Contact_Number VARCHAR(20),
-         Email VARCHAR(255)
-     );
-
- CREATE TABLE Member (
-         Member_ID INT PRIMARY KEY,
-         Member_Name VARCHAR(255),
-         Contact_Number VARCHAR(20),
-         Email VARCHAR(255),
-         Address VARCHAR(255),
-         Date_of_Joining DATE
-     );
-
-mysql> CREATE TABLE Admin (
-         Admin_ID INT PRIMARY KEY,
-         Admin_Name VARCHAR(255),
-         Contact_Number VARCHAR(20),
-         Email VARCHAR(255),
-         Password VARCHAR(255)
-     );
-
-mysql> CREATE TABLE Employee (
-    ->     Employee_ID INT PRIMARY KEY,
-    ->     Employee_Name VARCHAR(255),
-    ->     Contact_Number VARCHAR(20),
-    -> );
-
- CREATE TABLE Borrowing (
-         Borrow_ID INT PRIMARY KEY,
-         Member_ID INT,
-         Book_ID INT,
-         Borrow_Date DATE,
-         Due_Date DATE,
-         Return_Date DATE,
-         FOREIGN KEY (Member_ID) REFERENCES Member(Member_ID),
-         FOREIGN KEY (Book_ID) REFERENCES Book(Book_ID)
-     );
-
- CREATE TABLE Fine (
-         Fine_ID INT PRIMARY KEY,
-         Borrow_ID INT, 
-         Fine_Amount DECIMAL(10, 2),
-         Payment_Date DATE,
-         FOREIGN KEY (Borrow_ID) REFERENCES Borrowing(Borrow_ID)
-         
-         
-         
-         
- **TABLE : CUSTOMER** <br>
-
-<pre>CUSTOMER_ID : VARCHAR PRIMARY KEY </pre>
-<pre>NAME        : VARCHAR </pre>
-<pre>EMAIL       : VARCHAR </pre>
-<pre>PAYMENT_INFO: VARCHAR </pre>
+ **TABLE : Library**
+ <br>
+  
+<pre>Library_ID         : INT PRIMARY KEY </pre>
+<pre>Library_Name       : VARCHAR </pre>
+<pre>Location           : VARCHAR </pre>
+<pre>Contact_Number     : INT </pre>
 
 EX:
 | Library_ID |        Library_Name  | Location     |  Contact No. |
@@ -174,15 +97,12 @@ EX:
 <br>
 <br>
 
-**TABLE : PRODUCT**
+**TABLE : Book**
 
-<pre>PRODUCT_ID   : VARCHAR PRIMARY KEY </pre>
-<pre>NAME         : VARCHAR </pre>
-<pre>DESCRIPTION  : TEXT </pre>
-<pre>CATEGORY     : VARCHAR </pre>
-<pre>PRICE        : DECIMAL </pre>
-<pre>BRAND        : VARCHAR </pre>
-<pre>AVAILABLE    : BOOLEAN </pre>
+<pre>Book_ID      : INT PRIMARY KEY </pre>
+<pre>Book_Price   : DECIMAL </pre>
+<pre>Book_Title   : VARCHAR </pre>
+<pre>Book_Status  : VARCHAR </pre>
 
 EX:
 | Book_ID |        Book_Title         | BOOK Price |   BOOK Status |
@@ -197,13 +117,13 @@ EX:
 <br>
 <br>
 
-**TABLE : INVOICE**
+**TABLE : Author**
 
-<pre>INVOICE_NO    : VARCHAR PRIMARY KEY </pre>
-<pre>ORDER_DATE    : DATE </pre>
-<pre>TOTAL_AMT     : DECIMAL </pre>
-<pre>STATUS        : VARCHAR </pre>
-<pre>CUSTOMER_ID   : VARCHAR FOREIGN KEY </pre>
+<pre>Author_ID        : VARCHAR PRIMARY KEY </pre>
+<pre>Author_Name      : VARCHAR </pre>
+<pre>Contact_Number   : INT FOREIGN KEY </pre>
+<pre>Author Subject   : VARCHAR </pre>
+
 
 EX:
 | Author_ID |       Author_Name      | Contact No |  Author Subject |
@@ -219,6 +139,12 @@ EX:
 <br>
 
 **TABLE : ORDER_ITEMS**
+
+CREATE TABLE Publisher (
+         Publisher_ID INT PRIMARY KEY,
+         Publisher_Name VARCHAR(255),
+         Contact_Number VARCHAR(20),
+         Email VARCHAR(255)
 
 <pre>ORDER_ITEM_ID : VARCHAR PRIMARY KEY </pre>
 <pre>QUANTITY      : INT </pre>
@@ -240,6 +166,11 @@ EX:
 
 **TABLE : CART**
 
+ CREATE TABLE Vendor (
+         Vendor_ID INT PRIMARY KEY,
+         Vendor_Name VARCHAR(255),
+         Contact_Number VARCHAR(20),
+         Email VARCHAR(255)
 <pre>CART_ID       : VARCHAR PRIMARY KEY </pre>
 <pre>DATE_CREATED  : DATE </pre>
 <pre>TOTAL_AMT     : DECIMAL </pre>
@@ -257,6 +188,15 @@ EX:
 <br>
 
 **TABLE : PAYMENT**
+
+TABLE Member (
+         Member_ID INT PRIMARY KEY,
+         Member_Name VARCHAR(255),
+         Contact_Number VARCHAR(20),
+         Email VARCHAR(255),
+         Address VARCHAR(255),
+         Date_of_Joining DATE
+     );
 
 <pre>PAYMENT_ID     : INT PRIMARY KEY </pre>
 <pre>PAYMENT_DATE   : DATE </pre>
@@ -277,6 +217,12 @@ EX:
 <br>
 
 **TABLE : SHIPPPING**
+ CREATE TABLE Admin (
+         Admin_ID INT PRIMARY KEY,
+         Admin_Name VARCHAR(255),
+         Contact_Number VARCHAR(20),
+         Email VARCHAR(255),
+         Password VARCHAR(255)
 
 <pre>SHIPPING_ID   : VARCHAR PRIMARY KEY </pre>
 <pre>TRACKING_NUM  : VARCHAR </pre>
@@ -296,6 +242,12 @@ EX:
 
 **TAGLE : REVIEW**
 
+CREATE TABLE Employee (
+    ->     Employee_ID INT PRIMARY KEY,
+    ->     Employee_Name VARCHAR(255),
+    ->     Contact_Number VARCHAR(20),
+    -> );
+
 <pre>REVIEW_ID INT : PRIMARY KEY </pre>
 <pre>REVIEW_TEXT   : TEXT </pre>
 <pre>CUSTOMER_ID   : VARCHAR FOREIGN KEY </pre>
@@ -313,11 +265,14 @@ EX:
 <br>
 <br>
 
-**TABLE : WISHLIST**
+**TABLE : Borrowing**
 
-<pre>WISHLIST_ID   : INT PRIMARY KEY </pre>
-<pre>DATE_CREATED  : DATE </pre>
-<pre>CUSTOMER_ID   : VARCHAR FOREIGN KEY </pre>
+<pre>Borrow_ID     : INT PRIMARY KEY </pre>
+<pre Member_ID     : INT FOREIGN KEY </pre>
+<pre>Book_ID       : INT FOREIGN KEY </pre>
+<pre>Borrow_Date   : DATE  </pre>
+<pre>Due_Date      : DATE  </pre>
+<pre>Return_Date   : DATE  </pre>
 
 EX:
 |Borrow_ID     |  BOOK_ID     | Member_ID   | Borrow_date  | Due_date    | Return_date |
@@ -331,13 +286,13 @@ EX:
 <br>
 <br>
 
-**TABLE : PROMOTION**
+**TABLE : Fine**
 
-<pre>PROMOTION_ID        : INT PRIMARY KEY </pre>
-<pre>DISCOUNT_PERCENTAGE : DECIMAL </pre>
-<pre>START_DATE          : DATE </pre>
-<pre>END_DATE            : DATE </pre>
-<pre>PRODUCT_ID          : VARCHAR FOREIGN KEY </pre>
+<pre>Fine_ID            : INT PRIMARY KEY </pre>
+<pre>Borrow_ID          : DECIMAL FOREIGN KEY </pre>
+<pre>Fine_Amount        : DATE </pre>
+<pre>Payment_Date       : DATE </pre>
+
 
 EX:
 | Fine_ID | Borrow_ID | Fine_Amount | Payment_Date   |
