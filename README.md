@@ -66,34 +66,34 @@ EX:
 <br>
 <br>
 
-**TABLE : PHONE_NO** <br>
+**TABLE : Contact_Number** <br>
 
-<pre>PHONE_NO_ID  : INT PRIMARY KEY </pre>
-<pre>CUSTOMER_ID  : VARCHAR </pre>
-<pre>PHONE_NUMBER : VARCHAR </pre>
+<pre>PHONE_NO_ID    : INT PRIMARY KEY </pre>
+<pre>Library_ID     : VARCHAR </pre>
+<pre>Contact_Number : VARCHAR </pre>
 
 EX:
 |PHONE_NO_ID|CUSTOMER_ID|PHONE_NUMBER|
 |-----------|-----------|------------|
-| 01        |CUST001    |6775424587  |
+|     01    |  236746   |6775424587  |
 
 <br>
 <br>
 
 **TABLE : ADDRESS**
 
-<pre>ADDRESS_ID                : INT PRIMARY KEY </pre>
-<pre>CUSTOMER_ID               : VARCHAR FOREIGN KEY </pre>
-<pre>SHIPPING_ID               : VARCHAR FOREIGN KEY </pre>
-<pre>PLOT_STREET_BUILDING_NO   : VARCHAR </pre>
-<pre>FIRST_LINE                : VARCHAR </pre>
-<pre>SECOND_LINE               : VARCHAR </pre>
-<pre>PINCODE                   : VARCHAR </pre>
+<pre>ADDRESS_ID              : INT PRIMARY KEY </pre>
+<pre>Vendor_ID               : INT FOREIGN KEY </pre>
+<pre>Member_ID               : INT FOREIGN KEY </pre>
+<pre>BUILDING_NO             : VARCHAR </pre>
+<pre>FIRST_LINE              : VARCHAR </pre>
+<pre>SECOND_LINE             : VARCHAR </pre>
+<pre>PINCODE                 : VARCHAR </pre>
 
 EX:
-|ADDRESS_ID| CUSTOMER_ID|  SHIPPING_ID| PLOT_STREET_BUILDING_NO| FIRST_LINE| SECOND_LINE| PINCODE|
+|ADDRESS_ID| Vendor_ID  |  Member_ID  |      BUILDING_NO       | FIRST_LINE| SECOND_LINE| PINCODE|
 |----------|------------|-------------|------------------------|-----------|------------|--------|
-|   01     |CUST001     |             |       123              |  Main     |    St      |  600098|
+|   01     |CUST001     |             |         123            |  Main     |    St      |  600098|
 <br>
 <br>
 
@@ -138,19 +138,12 @@ EX:
 <br>
 <br>
 
-**TABLE : ORDER_ITEMS**
+**TABLE : Publisher**
 
-CREATE TABLE Publisher (
-         Publisher_ID INT PRIMARY KEY,
-         Publisher_Name VARCHAR(255),
-         Contact_Number VARCHAR(20),
-         Email VARCHAR(255)
-
-<pre>ORDER_ITEM_ID : VARCHAR PRIMARY KEY </pre>
-<pre>QUANTITY      : INT </pre>
-<pre>UNIT_PRICE    : DECIMAL </pre>
-<pre>INVOICE_NO    : VARCHAR FOREIGN KEY </pre>
-<pre>PRODUCT_ID    : VARCHAR FOREIGN KEY </pre>
+<pre>Publisher_ID    : INT PRIMARY KEY </pre>
+<pre>Publisher_Name  : VARCHAR </pre>
+<pre>Contact_Number  : INT FOREIGN KEY </pre>
+<pre>Email           : VARCHAR FOREIGN KEY </pre>
 
 EX:
 |Publisher_ID  | Publisher_Name          | Contact_Number   | Email                        |
@@ -164,17 +157,12 @@ EX:
 <br>
 <br>
 
-**TABLE : CART**
+**TABLE : Vendor**
 
- CREATE TABLE Vendor (
-         Vendor_ID INT PRIMARY KEY,
-         Vendor_Name VARCHAR(255),
-         Contact_Number VARCHAR(20),
-         Email VARCHAR(255)
-<pre>CART_ID       : VARCHAR PRIMARY KEY </pre>
-<pre>DATE_CREATED  : DATE </pre>
-<pre>TOTAL_AMT     : DECIMAL </pre>
-<pre>CUSTOMER_ID   : VARCHAR FOREIGN KEY </pre>
+<pre>Vendor_ID      : INT PRIMARY KEY </pre>
+<pre>Vendor_Name    : VARCHAR </pre>
+<pre>Contact_Number : INT FORIGN KEY </pre>
+<pre>Address        : VARCHAR FOREIGN KEY </pre>
 
 EX:
 |Vendor_ID     | Vendor_Name            | Contact_Number   | Address    |
@@ -187,22 +175,14 @@ EX:
 <br>
 <br>
 
-**TABLE : PAYMENT**
+**TABLE :Member**
 
-TABLE Member (
-         Member_ID INT PRIMARY KEY,
-         Member_Name VARCHAR(255),
-         Contact_Number VARCHAR(20),
-         Email VARCHAR(255),
-         Address VARCHAR(255),
-         Date_of_Joining DATE
-     );
-
-<pre>PAYMENT_ID     : INT PRIMARY KEY </pre>
-<pre>PAYMENT_DATE   : DATE </pre>
-<pre>PAYMENT_METHOD : VARCHAR </pre>
-<pre>AMOUNT         : DECIMAL </pre>
-<pre>INVOICE_NO     : VARCHAR </pre>
+<pre>Member_ID          : INT PRIMARY KEY </pre>
+<pre>Member_Name        : VARCHAR </pre>
+<pre>Contact_Number     : INT FOREIGN KEY </pre>
+<pre>Email              : VARCHAR </pre>
+<pre>Address            : VARCHAR FOREIGN KEY </pre>
+<pre>Date_of_Joining    : DATE </pre>
 
 EX:
 |Member_ID     | Member_Name       | Contact_Number   | Address    |   Email                     | Date_of_Joining  |
@@ -216,18 +196,13 @@ EX:
 <br>
 <br>
 
-**TABLE : SHIPPPING**
- CREATE TABLE Admin (
-         Admin_ID INT PRIMARY KEY,
-         Admin_Name VARCHAR(255),
-         Contact_Number VARCHAR(20),
-         Email VARCHAR(255),
-         Password VARCHAR(255)
+**TABLE : Admin**
 
-<pre>SHIPPING_ID   : VARCHAR PRIMARY KEY </pre>
-<pre>TRACKING_NUM  : VARCHAR </pre>
-<pre>SHIPPING_DATE : DATE </pre>
-<pre>INVOICE_NO    : VARCHAR FOREIGN KEY </pre>
+<pre>Admin_ID       : INT PRIMARY KEY </pre>
+<pre>Admin_Name     : VARCHAR </pre>
+<pre>Contact_Number : INT FOREIGN KEY </pre>
+<pre>Email          : VARCHAR FOREIGN KEY </pre>
+<pre>Password       : VARCHAR  </pre>
 
 EX:
 |Admin_ID      | Admin_Name         | Contact_Number  | Email                    |  Password       |
@@ -240,18 +215,12 @@ EX:
 <br>
 <br>
 
-**TAGLE : REVIEW**
+**TAGLE :Employee**
 
-CREATE TABLE Employee (
-    ->     Employee_ID INT PRIMARY KEY,
-    ->     Employee_Name VARCHAR(255),
-    ->     Contact_Number VARCHAR(20),
-    -> );
+<pre>Employee_ID      : INT PRIMARY KEY </pre>
+<pre>Employee_Name    : VARCHAR </pre>
+<pre>Contact_Number   : INT FOREIGN KEY </pre>
 
-<pre>REVIEW_ID INT : PRIMARY KEY </pre>
-<pre>REVIEW_TEXT   : TEXT </pre>
-<pre>CUSTOMER_ID   : VARCHAR FOREIGN KEY </pre>
-<pre>PRODUCT_ID    : VARCHAR FOREIGN KEY </pre>
 
 EX:
 |Employee_ID   |Employee_Name         | Contact_Number   |
@@ -268,7 +237,7 @@ EX:
 **TABLE : Borrowing**
 
 <pre>Borrow_ID     : INT PRIMARY KEY </pre>
-<pre Member_ID     : INT FOREIGN KEY </pre>
+<pre>Member_ID     : INT FOREIGN KEY </pre>
 <pre>Book_ID       : INT FOREIGN KEY </pre>
 <pre>Borrow_Date   : DATE  </pre>
 <pre>Due_Date      : DATE  </pre>
@@ -289,18 +258,19 @@ EX:
 **TABLE : Fine**
 
 <pre>Fine_ID            : INT PRIMARY KEY </pre>
-<pre>Borrow_ID          : DECIMAL FOREIGN KEY </pre>
+<pre>Borrow_ID          : INT FOREIGN KEY </pre>
 <pre>Fine_Amount        : DATE </pre>
 <pre>Payment_Date       : DATE </pre>
+<pre>Member_ID          : INT FOREIGN KEY </pre>
 
 
 EX:
-| Fine_ID | Borrow_ID | Fine_Amount | Payment_Date   |
-|---------|-----------|-------------|----------------|
-| 236746  | 834683    |  250        |  03-03-2023    |  
-| 124364  | 934645    |  50         |  03-04-2023    |
-| 844584  | 238912    |  150        |  12-03-2023    |
-| 909767  | 923299    |  400        |  05-04-2023    |
-| 547748  | 196319    |  750        |  04-02-2023    |
+| Fine_ID | Borrow_ID | Fine_Amount | Payment_Date   |  Member_ID   |
+|---------|-----------|-------------|----------------|--------------|
+| 236746  | 834683    |  250        |  03-03-2023    |  2728723     |
+| 124364  | 934645    |  50         |  03-04-2023    |  9237191     |
+| 844584  | 238912    |  150        |  12-03-2023    |  6432123     |
+| 909767  | 923299    |  400        |  05-04-2023    |  3764764     |  
+| 547748  | 196319    |  750        |  04-02-2023    |  1837199     |
 
 
