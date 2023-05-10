@@ -40,7 +40,8 @@ As a Business Analyst, We have been assigned the task of designing the database 
 
 
 ### **ENTITY RELATIONSHIP DIAGRAM FOR LIBRARY MANAGEMENT SYSTEM:** 
-![ER DIAGRAMM.drawio](https://github.com/ria9898/-MBA-BDM/blob/main/ER%20DIAGRAMM.drawio)
+![ER DIAGRAMMM drawio](https://github.com/ria9898/-MBA-BDM/assets/126074369/8ae804b2-0b34-4751-a015-6b6f4e4a3e18)
+
 
 
 ### **CONVERTING THE ER DIAGRAM INTO TABLE:**
