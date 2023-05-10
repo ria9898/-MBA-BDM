@@ -46,127 +46,6 @@ As a Business Analyst, We have been assigned the task of designing the database 
 
 ### **CONVERTING THE ER DIAGRAM INTO TABLE:**
 
-**TABLE : LIBRARY**
-
-| Library_ID |        Library_Name  | Location     |  Contact No. |
-|------------|----------------------|--------------|--------------|
-| 236746     |  Blossom Library     |Portofino     | 2362538846   |
-| 124364     |  Grand Library       |Dasve         | 9786453427   |
-| 844584     |  Osprey Library      |Hill View     | 1836715235   |
-| 909767     |  Empress Library     |School Street | 9236834967   |
-| 547748     |  Techno Library      |Thicket Street| 0993761361   |
-
-
-
-**TABLE : BOOK**
-
-| Book_ID |        Book_Title         | BOOK Price |   BOOK Status |
-|---------|---------------------------|------------|---------------|
-| 23455   |  Research Methodology     |500/-       | Available     |
-| 23545   |  Organizational Behaviour |980/-       | Not Available |
-| 455478  |  Data Analysis            |1400/-      | Not Available |
-| 345678  |  Financial Management     |400/-       | Available     |
-| 455478  |  Marketing Analytics      |1200/-      | Not Available |
-
-
-**TABLE : Author**
-
-| Author_ID |       Author_Name      | Contact No |  Author Subject |
-|-----------|------------------------|------------|-----------------|
-| 46587     |  C.R. Kothari          |284839283   |Research         |
-| 12389     |  Stephen P. Robbins    |374828742   | Management      |
-| 42308     |  Miachel S.            |273291247   |Computer Science |
-| 32568     |  D.K. Goel             |284656289   | Finance         |
-| 46878     | Mark Jeffery           |713627414   | Marketing       |
-
-
-**TABLE : PUBLISHER**
-
-|Publisher_ID  | Publisher_Name          | Contact_Number   | Email                        |
-|--------------|-------------------------|------------------|------------------------------|
-| 97757        |  Rishi Shah             |284839283         |rishi.shah@gmail.com          |
-| 97875        |  Stephen lawrence       |374828742         |Lawrence.1212@gmail.com       |
-| 97566        |  R.S Studio             |273291247         |r.sstudio@gmail.com           |
-| 99643        |  Goel publishing House  |284656289         |goelhouse.publisher@gmail.com |
-| 92467        |  Philips Kolter         |713627414         |kolterhouse@gmail.com         |
-      
-        
-  **TABLE : VENDOR**
-
-|Vendor_ID     | Vendor_Name            | Contact_Number   | Address    |
-|--------------|------------------------|------------------|------------|
-| 463486       |  Alankar Shah          |813672738         |Nagpur      |
-| 937583       |  Shankar Agarwal       |237628386         |Delhi       |
-| 737542       |  Umakant Book Store    |768636732         |Gujarat     |
-| 246291       | Crossword Enterprise   |328782731         |Mumbai      |
-| 932468       | Khushwant Singh        |877672167         |Pune        |      
- 
- 
- 
-  **TABLE : MEMBER**      
-        
-|Member_ID     | Member_Name       | Contact_Number   | Address    |   Email                     | Date_of_Joining  |
-|--------------|-------------------|------------------|------------|-----------------------------|------------------|
-|2728723       | Khushi Awasthi    |286289667         |Pune        | Khushi.awasthi@gmail.com    |   12-03-2020     |
-|8786762       | Richa Singh       |128128629         |Delhi       | richi.rich@gmail.com        |   01-01-2021     |
-|3863829       | Janet Joy         |989768611         |Patna       | janet.joy@yahoo.com         |   15-06-2020     | 
-|3246291       | Anshu Singh       |912378982         |Gujarat     | acv.coc@yahoo.com           |   30-03-2022     |
-|2332468       | Mayank Meet       |812167980         |Rajasthan   | mayankmeet.3456@gmail.com   |   10-10-2021     |
- 
-
-
-  **TABLE : ADMIN**      
-        
-|Admin_ID      | Admin_Name         | Contact_Number  | Email                    |  Password       |
-|--------------|-------------------|------------------|--------------------------|-----------------|
-|92371947      | Eesha Gupta       |9389137181        |eesha.gupta @yahoo.com    |    q1w2e3r      |
-|08497482      | Radha Singh       |9237218189        |radha0909@gmail.com       |    o9i8u7y6     |
-|82372891      | Rispa Maria       |9124563728        |rizpa.maria@yahoo.com     |    g5h6jfd3d    | 
-|28311733      | Ansh Singh        |8669902203        |ansh.acv@gmail.com        |    xcv@34:e3    |
-|98643612      | Akshat Kumar      |5688292914        |Akshat.qwerk@gmail.com    |    Life24*7     |
- 
-   
- 
-  **TABLE : EMPLOYEE**      
-        
-|Employee_ID   |Employee_Name         | Contact_Number   |
-|--------------|----------------------|------------------|
-|27482         |Gangu Ram             |9389137181        |
-|10987         |shikhar Kumar         |9237218189        |
-|90876         |Wilson                |9124563728        | 
-|20673         |Santosh Kumar Singh   |8669902203        |
-|60321         |Abhilash Shaji        |5688292914        |
-    
-    
- **TABLE : BORROWING**      
-        
-|Borrow_ID     |  BOOK_ID     | Member_ID   | Borrow_date  | Due_date    | Return_date |
-|--------------|--------------|-------------|--------------|-------------|-------------|
-|834683        | 2736429      |2728723      | 14-02-2023   |  28-02-2023 | 03-03-2023  |
-|934645        | 8272905      |9237191      | 20-03-2023   |  04-04-2023 | 03-04-2023  |
-|196319        | 9612356      |1837199      | 25-02-2023   |  09-03-2023 | 12-03-2023  | 
-|923299        | 1927010      |6432123      | 17-03-2023   |  31-03-2023 | 05-04-2023  |
-|238912        | 9887882      |6428462      | 08-01-2023   |  22-01-2023 | 04-02-2023  |   
-       
-
- **TABLE :FINE**
-
-| Fine_ID | Borrow_ID | Fine_Amount | Payment_Date   |
-|---------|-----------|-------------|----------------|
-| 236746  | 834683    |  250        |  03-03-2023    |  
-| 124364  | 934645    |  50         |  03-04-2023    |
-| 844584  | 238912    |  150        |  12-03-2023    |
-| 909767  | 923299    |  400        |  05-04-2023    |
-| 547748  | 196319    |  750        |  04-02-2023    |
-
-            
- 
- 
- ### **SQL COMMAND:**
- 
-    
-    
-    
   CREATE TABLE Library (
          Library_ID INT PRIMARY KEY,
          Library_Name VARCHAR(255),
@@ -242,4 +121,231 @@ mysql> CREATE TABLE Employee (
          Payment_Date DATE,
          FOREIGN KEY (Borrow_ID) REFERENCES Borrowing(Borrow_ID)
          
-             
+         
+         
+         
+ **TABLE : CUSTOMER** <br>
+
+<pre>CUSTOMER_ID : VARCHAR PRIMARY KEY </pre>
+<pre>NAME        : VARCHAR </pre>
+<pre>EMAIL       : VARCHAR </pre>
+<pre>PAYMENT_INFO: VARCHAR </pre>
+
+EX:
+| Library_ID |        Library_Name  | Location     |  Contact No. |
+|------------|----------------------|--------------|--------------|
+| 236746     |  Blossom Library     |Portofino     | 2362538846   |
+| 124364     |  Grand Library       |Dasve         | 9786453427   |
+| 844584     |  Osprey Library      |Hill View     | 1836715235   |
+| 909767     |  Empress Library     |School Street | 9236834967   |
+| 547748     |  Techno Library      |Thicket Street| 0993761361   |                  
+
+<br>
+<br>
+
+**TABLE : PHONE_NO** <br>
+
+<pre>PHONE_NO_ID  : INT PRIMARY KEY </pre>
+<pre>CUSTOMER_ID  : VARCHAR </pre>
+<pre>PHONE_NUMBER : VARCHAR </pre>
+
+EX:
+|PHONE_NO_ID|CUSTOMER_ID|PHONE_NUMBER|
+|-----------|-----------|------------|
+| 01        |CUST001    |6775424587  |
+
+<br>
+<br>
+
+**TABLE : ADDRESS**
+
+<pre>ADDRESS_ID                : INT PRIMARY KEY </pre>
+<pre>CUSTOMER_ID               : VARCHAR FOREIGN KEY </pre>
+<pre>SHIPPING_ID               : VARCHAR FOREIGN KEY </pre>
+<pre>PLOT_STREET_BUILDING_NO   : VARCHAR </pre>
+<pre>FIRST_LINE                : VARCHAR </pre>
+<pre>SECOND_LINE               : VARCHAR </pre>
+<pre>PINCODE                   : VARCHAR </pre>
+
+EX:
+|ADDRESS_ID| CUSTOMER_ID|  SHIPPING_ID| PLOT_STREET_BUILDING_NO| FIRST_LINE| SECOND_LINE| PINCODE|
+|----------|------------|-------------|------------------------|-----------|------------|--------|
+|   01     |CUST001     |             |       123              |  Main     |    St      |  600098|
+<br>
+<br>
+
+**TABLE : PRODUCT**
+
+<pre>PRODUCT_ID   : VARCHAR PRIMARY KEY </pre>
+<pre>NAME         : VARCHAR </pre>
+<pre>DESCRIPTION  : TEXT </pre>
+<pre>CATEGORY     : VARCHAR </pre>
+<pre>PRICE        : DECIMAL </pre>
+<pre>BRAND        : VARCHAR </pre>
+<pre>AVAILABLE    : BOOLEAN </pre>
+
+EX:
+| Book_ID |        Book_Title         | BOOK Price |   BOOK Status |
+|---------|---------------------------|------------|---------------|
+| 23455   |  Research Methodology     |500/-       | Available     |
+| 23545   |  Organizational Behaviour |980/-       | Not Available |
+| 455478  |  Data Analysis            |1400/-      | Not Available |
+| 345678  |  Financial Management     |400/-       | Available     |
+| 455478  |  Marketing Analytics      |1200/-      | Not Available |
+
+
+<br>
+<br>
+
+**TABLE : INVOICE**
+
+<pre>INVOICE_NO    : VARCHAR PRIMARY KEY </pre>
+<pre>ORDER_DATE    : DATE </pre>
+<pre>TOTAL_AMT     : DECIMAL </pre>
+<pre>STATUS        : VARCHAR </pre>
+<pre>CUSTOMER_ID   : VARCHAR FOREIGN KEY </pre>
+
+EX:
+| Author_ID |       Author_Name      | Contact No |  Author Subject |
+|-----------|------------------------|------------|-----------------|
+| 46587     |  C.R. Kothari          |284839283   |Research         |
+| 12389     |  Stephen P. Robbins    |374828742   | Management      |
+| 42308     |  Miachel S.            |273291247   |Computer Science |
+| 32568     |  D.K. Goel             |284656289   | Finance         |
+| 46878     | Mark Jeffery           |713627414   | Marketing       |
+
+
+<br>
+<br>
+
+**TABLE : ORDER_ITEMS**
+
+<pre>ORDER_ITEM_ID : VARCHAR PRIMARY KEY </pre>
+<pre>QUANTITY      : INT </pre>
+<pre>UNIT_PRICE    : DECIMAL </pre>
+<pre>INVOICE_NO    : VARCHAR FOREIGN KEY </pre>
+<pre>PRODUCT_ID    : VARCHAR FOREIGN KEY </pre>
+
+EX:
+|Publisher_ID  | Publisher_Name          | Contact_Number   | Email                        |
+|--------------|-------------------------|------------------|------------------------------|
+| 97757        |  Rishi Shah             |284839283         |rishi.shah@gmail.com          |
+| 97875        |  Stephen lawrence       |374828742         |Lawrence.1212@gmail.com       |
+| 97566        |  R.S Studio             |273291247         |r.sstudio@gmail.com           |
+| 99643        |  Goel publishing House  |284656289         |goelhouse.publisher@gmail.com |
+| 92467        |  Philips Kolter         |713627414         |kolterhouse@gmail.com         |
+      
+<br>
+<br>
+
+**TABLE : CART**
+
+<pre>CART_ID       : VARCHAR PRIMARY KEY </pre>
+<pre>DATE_CREATED  : DATE </pre>
+<pre>TOTAL_AMT     : DECIMAL </pre>
+<pre>CUSTOMER_ID   : VARCHAR FOREIGN KEY </pre>
+
+EX:
+|Vendor_ID     | Vendor_Name            | Contact_Number   | Address    |
+|--------------|------------------------|------------------|------------|
+| 463486       |  Alankar Shah          |813672738         |Nagpur      |
+| 937583       |  Shankar Agarwal       |237628386         |Delhi       |
+| 737542       |  Umakant Book Store    |768636732         |Gujarat     |
+| 246291       | Crossword Enterprise   |328782731         |Mumbai      |
+| 932468       | Khushwant Singh        |877672167         |Pune        | 
+<br>
+<br>
+
+**TABLE : PAYMENT**
+
+<pre>PAYMENT_ID     : INT PRIMARY KEY </pre>
+<pre>PAYMENT_DATE   : DATE </pre>
+<pre>PAYMENT_METHOD : VARCHAR </pre>
+<pre>AMOUNT         : DECIMAL </pre>
+<pre>INVOICE_NO     : VARCHAR </pre>
+
+EX:
+|Member_ID     | Member_Name       | Contact_Number   | Address    |   Email                     | Date_of_Joining  |
+|--------------|-------------------|------------------|------------|-----------------------------|------------------|
+|2728723       | Khushi Awasthi    |286289667         |Pune        | Khushi.awasthi@gmail.com    |   12-03-2020     |
+|8786762       | Richa Singh       |128128629         |Delhi       | richi.rich@gmail.com        |   01-01-2021     |
+|3863829       | Janet Joy         |989768611         |Patna       | janet.joy@yahoo.com         |   15-06-2020     | 
+|3246291       | Anshu Singh       |912378982         |Gujarat     | acv.coc@yahoo.com           |   30-03-2022     |
+|2332468       | Mayank Meet       |812167980         |Rajasthan   | mayankmeet.3456@gmail.com   |   10-10-2021     |
+
+<br>
+<br>
+
+**TABLE : SHIPPPING**
+
+<pre>SHIPPING_ID   : VARCHAR PRIMARY KEY </pre>
+<pre>TRACKING_NUM  : VARCHAR </pre>
+<pre>SHIPPING_DATE : DATE </pre>
+<pre>INVOICE_NO    : VARCHAR FOREIGN KEY </pre>
+
+EX:
+|Admin_ID      | Admin_Name         | Contact_Number  | Email                    |  Password       |
+|--------------|-------------------|------------------|--------------------------|-----------------|
+|92371947      | Eesha Gupta       |9389137181        |eesha.gupta @yahoo.com    |    q1w2e3r      |
+|08497482      | Radha Singh       |9237218189        |radha0909@gmail.com       |    o9i8u7y6     |
+|82372891      | Rispa Maria       |9124563728        |rizpa.maria@yahoo.com     |    g5h6jfd3d    | 
+|28311733      | Ansh Singh        |8669902203        |ansh.acv@gmail.com        |    xcv@34:e3    |
+|98643612      | Akshat Kumar      |5688292914        |Akshat.qwerk@gmail.com    |    Life24*7     \ 
+<br>
+<br>
+
+**TAGLE : REVIEW**
+
+<pre>REVIEW_ID INT : PRIMARY KEY </pre>
+<pre>REVIEW_TEXT   : TEXT </pre>
+<pre>CUSTOMER_ID   : VARCHAR FOREIGN KEY </pre>
+<pre>PRODUCT_ID    : VARCHAR FOREIGN KEY </pre>
+
+EX:
+|Employee_ID   |Employee_Name         | Contact_Number   |
+|--------------|----------------------|------------------|
+|27482         |Gangu Ram             |9389137181        |
+|10987         |shikhar Kumar         |9237218189        |
+|90876         |Wilson                |9124563728        | 
+|20673         |Santosh Kumar Singh   |8669902203        |
+|60321         |Abhilash Shaji        |5688292914        |
+
+<br>
+<br>
+
+**TABLE : WISHLIST**
+
+<pre>WISHLIST_ID   : INT PRIMARY KEY </pre>
+<pre>DATE_CREATED  : DATE </pre>
+<pre>CUSTOMER_ID   : VARCHAR FOREIGN KEY </pre>
+
+EX:
+|Borrow_ID     |  BOOK_ID     | Member_ID   | Borrow_date  | Due_date    | Return_date |
+|--------------|--------------|-------------|--------------|-------------|-------------|
+|834683        | 2736429      |2728723      | 14-02-2023   |  28-02-2023 | 03-03-2023  |
+|934645        | 8272905      |9237191      | 20-03-2023   |  04-04-2023 | 03-04-2023  |
+|196319        | 9612356      |1837199      | 25-02-2023   |  09-03-2023 | 12-03-2023  | 
+|923299        | 1927010      |6432123      | 17-03-2023   |  31-03-2023 | 05-04-2023  |
+|238912        | 9887882      |6428462      | 08-01-2023   |  22-01-2023 | 04-02-2023  | 
+
+<br>
+<br>
+
+**TABLE : PROMOTION**
+
+<pre>PROMOTION_ID        : INT PRIMARY KEY </pre>
+<pre>DISCOUNT_PERCENTAGE : DECIMAL </pre>
+<pre>START_DATE          : DATE </pre>
+<pre>END_DATE            : DATE </pre>
+<pre>PRODUCT_ID          : VARCHAR FOREIGN KEY </pre>
+
+EX:
+| Fine_ID | Borrow_ID | Fine_Amount | Payment_Date   |
+|---------|-----------|-------------|----------------|
+| 236746  | 834683    |  250        |  03-03-2023    |  
+| 124364  | 934645    |  50         |  03-04-2023    |
+| 844584  | 238912    |  150        |  12-03-2023    |
+| 909767  | 923299    |  400        |  05-04-2023    |
+| 547748  | 196319    |  750        |  04-02-2023    |
+
+
