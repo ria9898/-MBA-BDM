@@ -5,309 +5,164 @@ create Database library_management_system;
 -- ACCESSING THE "LIBRRAY_MANAGEMENT_SYSTEM" DATABASE
 use library_management_system;
 
--- CREATING LIBRARY TABLE WITH APPROPRIATE DATA TYPES
-CREATE TABLE LIBRARY (
-  LIBRARY_ID VARCHAR(10) NOT NULL PRIMARY KEY,
-  NAME VARCHAR(50),
-  LOCATION VARCHAR(50),
-  CONTACT_NUMBER VARCHAR(10),
+Creating the Library table:
+
+CREATE TABLE Library (
+  Library_ID INT PRIMARY KEY,
+  Library_Name VARCHAR,
+  Location VARCHAR,
+  Contact_Number INT
 );
 
--- CREATING PHONE NUMBER TABLE FOR STORING MULTIPLE PHONE NUMBERS 
-CREATE TABLE CONTACT_NUMBER(
-	CONTACT_NO INT NOT NULL AUTO_INCREMENT,
-    LIBRARY_ID VARCHAR(10),
-    CONTACT_NUMBER VARCHAR(10),
-    PRIMARY KEY (CONTACT_NUMBER),
-    FOREIGN KEY (LIBRARY_ID) REFERENCES LIBRARY(LIBRARY_ID)
+Inserting data into the Library table:
+
+INSERT INTO Library (Library_ID, Library_Name, Location, Contact_Number)
+VALUES (236746, 'Blossom Library', 'Portofino', 2362538846),
+       (124364, 'Grand Library', 'Dasve', 9786453427),
+       (844584, 'Osprey Library', 'Hill View', 1836715235),
+       (909767, 'Empress Library', 'School Street', 9236834967),
+       (547748, 'Techno Library', 'Thicket Street', 0993761361);
+
+Creating the Contact_Number table:
+
+CREATE TABLE Contact_Number (
+  PHONE_NO_ID INT PRIMARY KEY,
+  Library_ID INT,
+  Contact_Number VARCHAR,
+  FOREIGN KEY (Library_ID) REFERENCES Library(Library_ID)
 );
 
---CREATING LOCATION TABLE TO SEE THE LOCATION OF THE LIBRARY 
-CREATE TABLE LOCATION(
-	ADDRESS_ID INT NOT NULL AUTO_INCREMENT,
-    CUSTOMER_ID VARCHAR(10),
-    SHIPPING_ID VARCHAR(10),
-    PLOT_STREET_BUILDING_NO VARCHAR(10),
-    FIRST_LINE VARCHAR(20) NULL,
-    SECOND_LINE VARCHAR(20) NULL,
-    PINCODE VARCHAR(10),
-    PRIMARY KEY (ADDRESS_ID),
-    FOREIGN KEY (CUSTOMER_ID) REFERENCES CUSTOMER (CUSTOMER_ID),
-    FOREIGN KEY (SHIPPING_ID) REFERENCES SHIPPING (SHIPPING_ID)
+Inserting data into the Contact_Number table:
+
+INSERT INTO Contact_Number (PHONE_NO_ID, Library_ID, Contact_Number)
+VALUES (01, 236746, '6775424587');
+
+Creating the ADDRESS table:
+
+CREATE TABLE ADDRESS (
+  ADDRESS_ID INT PRIMARY KEY,
+  Vendor_ID INT,
+  Member_ID INT,
+  BUILDING_NO VARCHAR,
+  FIRST_LINE VARCHAR,
+  SECOND_LINE VARCHAR,
+  PINCODE VARCHAR,
+  FOREIGN KEY (Vendor_ID) REFERENCES Vendor(Vendor_ID),
+  FOREIGN KEY (Member_ID) REFERENCES Member(Member_ID)
 );
 
--- CREATING BOOK TABLE WITH APPROPRIATE DATA TYPES
-CREATE TABLE BOOK (
-    BOOK_ID VARCHAR(10) NOT NULL PRIMARY KEY,
-    TITLE VARCHAR(50),
-    PRICE DECIMAL(10,2),
-    STATUS VARCHAR(50),
-    AVAILABLE BOOLEAN
+Inserting data into the ADDRESS table:
+
+INSERT INTO ADDRESS (ADDRESS_ID, Vendor_ID, Member_ID, BUILDING_NO, FIRST_LINE, SECOND_LINE, PINCODE)
+VALUES (01, 737542, 3246296, '123', 'Main St', '600098');
+
+Creating the Book table:
+
+CREATE TABLE Book (
+  Book_ID INT PRIMARY KEY,
+  Book_Price DECIMAL,
+  Book_Title VARCHAR,
+  Book_Status VARCHAR
 );
 
--- CREATING INVOICE TABLE WITH APPROPRIATE DATA TYPES
-CREATE TABLE INVOICE(
-    INVOICE_NO VARCHAR(10) NOT NULL PRIMARY KEY,
-    ORDER_DATE DATE,
-    TOTAL_AMT DECIMAL(10,2),
-    STATUS VARCHAR(50),
-    CUSTOMER_ID VARCHAR(10),
-    FOREIGN KEY (CUSTOMER_ID) REFERENCES CUSTOMER(CUSTOMER_ID)
+Inserting data into the Book table:
+
+INSERT INTO Book (Book_ID, Book_Title, Book_Price, Book_Status)
+VALUES (23455, 'Research Methodology', 500.00, 'Available'),
+       (23545, 'Organizational Behaviour', 980.00, 'Not Available'),
+       (455478, 'Data Analysis', 1400.00, 'Not Available'),
+       (345678, 'Financial Management', 400.00, 'Available'),
+       (455478, 'Marketing Analytics', 1200.00, 'Not Available');
+
+Creating the Author table:
+
+CREATE TABLE Author (
+  Author_ID VARCHAR PRIMARY KEY,
+  Author_Name VARCHAR,
+  Contact_No INT,
+  Author_Subject VARCHAR
 );
 
--- CREATING ORDER_ITEM TABLE WITH APPROPRIATE DATA TYPES
-CREATE TABLE ORDER_ITEM (
-    ORDER_ITEM_ID VARCHAR(10) NOT NULL PRIMARY KEY,
-    QUANTITY INT,
-    UNIT_PRICE DECIMAL(10,2),
-    INVOICE_NO VARCHAR(10),
-    PRODUCT_ID VARCHAR(10),
-    FOREIGN KEY (INVOICE_NO) REFERENCES INVOICE(INVOICE_NO),
-    FOREIGN KEY (PRODUCT_ID) REFERENCES PRODUCT(PRODUCT_ID)
+Inserting data into the Author table:
+
+INSERT INTO Author (Author_ID, Author_Name, Contact_No, Author_Subject)
+VALUES ('46587', 'C.R. Kothari', 284839283, 'Research'),
+       ('12389', 'Stephen P. Robbins', 374828742, 'Management'),
+       ('42308', 'Miachel S.', 273291247, 'Computer Science'),
+       ('32568', 'D.K. Goel', 284656289, 'Finance'),
+       ('46878', 'Mark Jeffery', 713627414, 'Marketing');
+
+Creating the Publisher table:
+
+CREATE TABLE Publisher (
+  Publisher_ID INT PRIMARY KEY,
+  Publisher_Name VARCHAR,
+  Contact_Number INT,
+  Email VARCHAR
 );
 
--- CREATING CART TABLE WITH APPROPRIATE DATA TYPES
-CREATE TABLE CART (
-    CART_ID VARCHAR(10) NOT NULL PRIMARY KEY,
-    DATE_CREATED DATE,
-    TOTAL_AMT DECIMAL(10,2),
-    CUSTOMER_ID VARCHAR(10),
-    FOREIGN KEY (CUSTOMER_ID) REFERENCES CUSTOMER(CUSTOMER_ID)
+Inserting data into the Publisher table:
+
+INSERT INTO Publisher (Publisher_ID, Publisher_Name, Contact_Number, Email)
+VALUES (97757, 'Rishi Shah', 284839283, 'rishi.shah@gmail
+[9:51 pm, 10/05/2023] Aakriti: -- creating table for Publisher
+CREATE TABLE Publisher (
+    Publisher_ID INT PRIMARY KEY,
+    Publisher_Name VARCHAR(255),
+    Contact_Number INT,
+    Email VARCHAR(255)
 );
 
--- CREATING PAYMENT TABLE WITH APPROPRIATE DATA TYPES
-CREATE TABLE PAYMENT (
-    PAYMENT_ID INT PRIMARY KEY,
-    PAYMENT_DATE DATE,
-    PAYMENT_METHOD VARCHAR(50),
-    AMOUNT DECIMAL(10,2),
-    INVOICE_NO VARCHAR(10),
-    FOREIGN KEY (INVOICE_NO) REFERENCES INVOICE(INVOICE_NO)
+-- inserting data into Publisher table
+INSERT INTO Publisher (Publisher_ID, Publisher_Name, Contact_Number, Email)
+VALUES 
+    (97757, 'Rishi Shah', 284839283, 'rishi.shah@gmail.com'),
+    (97875, 'Stephen Lawrence', 374828742, 'Lawrence.1212@gmail.com'),
+    (97566, 'R.S Studio', 273291247, 'r.sstudio@gmail.com'),
+    (99643, 'Goel Publishing House', 284656289, 'goelhouse.publisher@gmail.com'),
+    (92467, 'Philips Kolter', 713627414, 'kolterhouse@gmail.com');
+
+-- creating table for Vendor
+CREATE TABLE Vendor (
+    Vendor_ID INT PRIMARY KEY,
+    Vendor_Name VARCHAR(255),
+    Contact_Number INT,
+    Address VARCHAR(255)
 );
 
--- CREATING SHIPPING TABLE WITH APPROPRIATE DATA TYPES
-CREATE TABLE SHIPPING (
-    SHIPPING_ID VARCHAR(10) PRIMARY KEY,
-    TRACKING_NUM VARCHAR(50),
-    SHIPPING_DATE DATE,
-    INVOICE_NO VARCHAR(10),
-    FOREIGN KEY (INVOICE_NO) REFERENCES INVOICE(INVOICE_NO)
+-- inserting data into Vendor table
+INSERT INTO Vendor (Vendor_ID, Vendor_Name, Contact_Number, Address)
+VALUES 
+    (463486, 'Alankar Shah', 813672738, 'Nagpur'),
+    (937583, 'Shankar Agarwal', 237628386, 'Delhi'),
+    (737542, 'Umakant Book Store', 768636732, 'Gujarat'),
+    (246291, 'Crossword Enterprise', 328782731, 'Mumbai'),
+    (932468, 'Khushwant Singh', 877672167, 'Pune');
+
+-- creating table for Member
+CREATE TABLE Member (
+    Member_ID INT PRIMARY KEY,
+    Member_Name VARCHAR(255),
+    Contact_Number INT,
+    Address VARCHAR(255),
+    Email VARCHAR(255),
+    Date_of_Joining DATE
 );
 
--- CREATING REVIEW TABLE WITH APPROPRIATE DATA TYPES
-CREATE TABLE REVIEW (
-    REVIEW_ID INT PRIMARY KEY,
-    PRODUCT_RATING INT,
-    REVIEW_TEXT TEXT,
-    CUSTOMER_ID VARCHAR(10),
-    PRODUCT_ID VARCHAR(10),
-    FOREIGN KEY (CUSTOMER_ID) REFERENCES CUSTOMER(CUSTOMER_ID),
-    FOREIGN KEY (PRODUCT_ID) REFERENCES PRODUCT(PRODUCT_ID)
+-- inserting data into Member table
+INSERT INTO Member (Member_ID, Member_Name, Contact_Number, Address, Email, Date_of_Joining)
+VALUES 
+    (2728723, 'Khushi Awasthi', 286289667, 'Pune', 'Khushi.awasthi@gmail.com', '2020-03-12'),
+    (8786762, 'Richa Singh', 128128629, 'Delhi', 'richi.rich@gmail.com', '2021-01-01'),
+    (3863829, 'Janet Joy', 989768611, 'Patna', 'janet.joy@yahoo.com', '2020-06-15'),
+    (3246291, 'Anshu Singh', 912378982, 'Gujarat', 'acv.coc@yahoo.com', '2022-03-30'),
+    (2332468, 'Mayank Meet', 812167980, 'Rajasthan', 'mayankmeet.3456@gmail.com', '2021-10-10');
+
+-- creating table for Admin
+CREATE TABLE Admin (
+    Admin_ID INT PRIMARY KEY,
+    Admin_Name VARCHAR(255),
+    Contact_Number INT,
+    Email VARCHAR(255),
+    Password VARCHAR(255)
 );
-
--- CREATING BORROWING TABLE WITH APPROPRIATE DATA TYPES
-CREATE TABLE BORROWING (
-    BORROW_ID INT NOT NULL,
-    MEMBER_ID INT,
-    BOOK_ID INT,
-    BORROW_DATE DATE,
-    DUE_DATE DATE,
-    RETURN_DATE DATE,
-    PRIMARY KEY (BORROW_ID),
-    FOREIGN KEY (MEMBER_ID) REFERENCES MEMBER(MEMBERr_ID),
-    FOREIGN KEY (BOOK_ID) REFERENCES BOOK(BOOK_ID)
-);
-
-
--- CREATING FINE TABLE WITH APPROPRIATE DATA TYPES              
-CREATE TABLE FINE (
-    FINE_ID  NOT NULL PRIMARY KEY,
-    BORROW_ID INT,
-    MEMBER_ID VARCHAR(10),
-    FINE_AMOUNT DECIMAL(10, 2),
-    PAYMENT_DATE DATE,
-    FOREIGN KEY (BORROW_ID) REFERENCES BORROWING (BORROW_ID),
-    FOREIGN KEY (MEMBER_ID) REFERENCES MEMBER (MEMBER_ID)
-);
-
--- INSERTING VALUE IN CUSTOMER TABLE
-INSERT INTO CUSTOMER (CUSTOMER_ID, NAME, EMAIL, PAYMENT_INFO)
-VALUES
-('CUST001', 'John Smith', 'john.smith@email.com', 'VISA'),
-('CUST002', 'Jane Doe', 'jane.doe@email.com', 'MASTERCARD'),
-('CUST003', 'Bob Johnson', 'bob.johnson@email.com', 'DISCOVER'),
-('CUST004', 'Sara Lee', 'sara.lee@email.com', 'AMERICAN EXPRESS'),
-('CUST005', 'David Brown', 'david.brown@email.com', 'VISA'),
-('CUST006', 'Amy Davis', 'amy.davis@email.com', 'MASTERCARD'),
-('CUST007', 'Mark Wilson', 'mark.wilson@email.com', 'DISCOVER'),
-('CUST008', 'Karen Taylor', 'karen.taylor@email.com', 'AMERICAN EXPRESS'),
-('CUST009', 'Mike Green', 'mike.green@email.com', 'VISA'),
-('CUST010', 'Lisa Jackson', 'lisa.jackson@email.com', 'MASTERCARD');
-
--- INSERTING VALUES IN PHONE NUMBER TABLE
-INSERT INTO PHONE_NO (PHONE_NO_ID, CUSTOMER_ID, PHONE_NUMBER)
-VALUES
-('01', 'CUST001', '6775424587'),
-('02', 'CUST002', '9873451290'),
-('03', 'CUST003', '8760983456'),
-('04', 'CUST004', '9081232309'),
-('05', 'CUST005', '8760983412'),
-('06', 'CUST006', '7653456409'),
-('07', 'CUST007', '7765347886'),
-('08', 'CUST008', '9876345600'),
-('09', 'CUST009', '8765434567'),
-('010', 'CUST010', '8762346789');
-
---INSERTING VALUES IN ADDRESS TABLE
-INSERT INTO ADDRESS (ADDRESS_ID, CUSTOMER_ID, PLOT_STREET_BUILDING_NO, FIRST_LINE, SECOND_LINE, PINCODE )
-VALUES
-('01', 'CUST001', 123, 'Main', 'St', 600098),
-('02', 'CUST002', 456, 'Oak', 'Ave', 602198),
-('03', 'CUST003', 789, 'Maple', 'Dr', 612398),
-('04', 'CUST004', 111, 'Cherry', 'Ln', 656798),
-('05', 'CUST005', 222, 'Pine', 'St', 666668),
-('06', 'CUST006', 333, 'Cedar', 'Ave', 696969),
-('07', 'CUST007', 444, 'Elm', 'St', 654321),
-('08', 'CUST008', 555, 'Birch', 'Dr', 600909),
-('09', 'CUST009', 666, 'Oak', 'St', 611223),
-('10', 'CUST010', 777, 'Maple', 'Ave', 657481);
-
--- INSERTING VALUES IN ADDRESS TABLE
-INSERT INTO ADDRESS (ADDRESS_ID, SHIPPING_ID, PLOT_STREET_BUILDING_NO, FIRST_LINE, SECOND_LINE, PINCODE )
-VALUES
-('11', 1, 123, 'Main', 'St', 600098),
-('12', 2, 456, 'Elm', 'St', 611223),
-('13', 3, 789, 'Oak', 'St', 657481),
-('14', 4, 987, 'Pine', 'St', 676668),
-('15', 5, 321, 'Maple', 'St', 612398),
-('16', 6, 654, 'Cedar', 'St', 602398),
-('17', 7, 987, 'Elm', 'St', 612391),
-('18', 8, 432, 'Oak', 'St', 612388),
-('19', 9, 765, 'Pine', 'St', 612400),
-('20', 10, 321, 'Birch', 'St', 612399);
-
--- INSERTING VALUE IN PRODUCTION TABLE
-INSERT INTO PRODUCT (PRODUCT_ID, NAME, DESCRIPTION, CATEGORY, PRICE, BRAND, AVAILABLE)
-VALUES
-('PROD001', 'Laptop', 'Thin and light laptop with long battery life', 'Electronics', 899.99, 'Dell', TRUE),
-('PROD002', 'Sneakers', 'Comfortable sneakers for everyday wear', 'Footwear', 59.99, 'Nike', TRUE),
-('PROD003', 'Headphones', 'Noise-cancelling headphones with high-quality audio', 'Electronics', 249.99, 'Bose', TRUE),
-('PROD004', 'T-Shirt', 'Soft and breathable cotton t-shirt with a simple design', 'Apparel', 19.99, 'H&M', TRUE),
-('PROD005', 'Smartwatch', 'Smartwatch with fitness tracking and heart rate monitoring', 'Electronics', 299.99, 'Apple', FALSE),
-('PROD006', 'Backpack', 'Durable backpack with multiple pockets and compartments', 'Bags', 79.99, 'North Face', TRUE),
-('PROD007', 'Running Shorts', 'Lightweight and moisture-wicking shorts for running', 'Athletic Apparel', 29.99, 'Adidas', TRUE),
-('PROD008', 'Blender', 'Powerful blender for making smoothies and other beverages', 'Appliances', 129.99, 'Vitamix', TRUE),
-('PROD009', 'Wireless Speaker', 'Portable wireless speaker with Bluetooth connectivity', 'Electronics', 99.99, 'JBL', TRUE),
-('PROD010', 'Jeans', 'Classic denim jeans with a straight fit', 'Apparel', 49.99, 'Levis', TRUE);
-
--- INSERTING VALUE IN INVOICE TABLE
-INSERT INTO INVOICE (INVOICE_NO, ORDER_DATE, TOTAL_AMT, STATUS, CUSTOMER_ID)
-VALUES
-('INV001', '2022-01-01', 129.99, 'Paid', 'CUST001'),
-('INV002', '2022-01-02', 49.99, 'Paid', 'CUST003'),
-('INV003', '2022-01-03', 899.99, 'Paid', 'CUST005'),
-('INV004', '2022-01-04', 249.99, 'Pending', 'CUST002'),
-('INV005', '2022-01-05', 29.99, 'Paid', 'CUST007'),
-('INV006', '2022-01-06', 59.99, 'Paid', 'CUST010'),
-('INV007', '2022-01-07', 299.99, 'Pending', 'CUST008'),
-('INV008', '2022-01-08', 79.99, 'Paid', 'CUST004'),
-('INV009', '2022-01-09', 129.99, 'Paid', 'CUST006'),
-('INV010', '2022-01-10', 99.99, 'Pending', 'CUST009');
-
--- INSERTING VALUE IN ORDER_ITEM TABLE
-INSERT INTO ORDER_ITEM (ORDER_ITEM_ID, QUANTITY, UNIT_PRICE, INVOICE_NO, PRODUCT_ID)
-VALUES
-('OI001', 1, 129.99, 'INV001', 'PROD007'),
-('OI002', 2, 49.99, 'INV002', 'PROD010'),
-('OI003', 1, 899.99, 'INV003', 'PROD001'),
-('OI004', 1, 249.99, 'INV004', 'PROD003'),
-('OI005', 3, 29.99, 'INV005', 'PROD007'),
-('OI006', 1, 59.99, 'INV006', 'PROD002'),
-('OI007', 1, 299.99, 'INV007', 'PROD005'),
-('OI008', 1, 79.99, 'INV008', 'PROD006'),
-('OI009', 2, 129.99, 'INV009', 'PROD008'),
-('OI010', 1, 99.99, 'INV010', 'PROD009');
-
--- INSERTING VALUE IN CART TABLE
-INSERT INTO CART (CART_ID, DATE_CREATED, TOTAL_AMT, CUSTOMER_ID)
-VALUES
-('CART001', '2022-01-01', 129.99, 'CUST001'),
-('CART002', '2022-01-02', 49.99, 'CUST003'),
-('CART003', '2022-01-03', 899.99, 'CUST005'),
-('CART004', '2022-01-04', 249.99, 'CUST002'),
-('CART005', '2022-01-05', 29.99, 'CUST007'),
-('CART006', '2022-01-06', 59.99, 'CUST010'),
-('CART007', '2022-01-07', 299.99, 'CUST008'),
-('CART008', '2022-01-08', 79.99, 'CUST004'),
-('CART009', '2022-01-09', 129.99, 'CUST006'),
-('CART010', '2022-01-10', 99.99, 'CUST009');
-
--- INSERTING VALUE IN PAYMENT TABLE
-INSERT INTO PAYMENT (PAYMENT_ID, PAYMENT_DATE, PAYMENT_METHOD, AMOUNT, INVOICE_NO)
-VALUES
-(1, '2022-01-15', 'Credit Card', 129.99, 'INV001'),
-(2, '2022-01-16', 'PayPal', 49.99, 'INV002'),
-(3, '2022-01-17', 'Credit Card', 899.99, 'INV003'),
-(4, '2022-01-18', 'Debit Card', 249.99, 'INV004'),
-(5, '2022-01-19', 'PayPal', 89.97, 'INV005'),
-(6, '2022-01-20', 'Credit Card', 59.99, 'INV006'),
-(7, '2022-01-21', 'Debit Card', 299.99, 'INV007'),
-(8, '2022-01-22', 'Credit Card', 79.99, 'INV008'),
-(9, '2022-01-23', 'PayPal', 259.98, 'INV009'),
-(10, '2022-01-24', 'Credit Card', 99.99, 'INV010');
-
--- INSERTING VALUE IN SHIPPING TABLE
-INSERT INTO SHIPPING (SHIPPING_ID, TRACKING_NUM, SHIPPING_DATE, INVOICE_NO)
-VALUES
-(1, '123456789', '2022-01-20', 'INV001'),
-(2, '234567890', '2022-01-21', 'INV002'),
-(3, '345678901', '2022-01-22', 'INV003'),
-(4, '456789012', '2022-01-23', 'INV004'),
-(5, '567890123', '2022-01-24', 'INV005'),
-(6, '678901234', '2022-01-25', 'INV006'),
-(7, '789012345', '2022-01-26', 'INV007'),
-(8, '890123456', '2022-01-27', 'INV008'),
-(9, '901234567', '2022-01-28', 'INV009'),
-(10, '012345678', '2022-01-29', 'INV010');
-
--- INSERTING VALUE IN REVIEW TABLE
-INSERT INTO REVIEW (REVIEW_ID, PRODUCT_RATING, REVIEW_TEXT, CUSTOMER_ID, PRODUCT_ID)
-VALUES
-(1, 4, 'This product is great! It exceeded my expectations.', 'CUST001', 'PROD001'),
-(2, 3, 'Decent product for the price.', 'CUST002', 'PROD002'),
-(3, 5, 'Absolutely love this product! It is exactly what I was looking for.', 'CUST003', 'PROD003'),
-(4, 2, 'Not happy with this product. It arrived damaged and did not work properly.', 'CUST004', 'PROD004'),
-(5, 4, 'This product is of good quality and works well.', 'CUST005', 'PROD005'),
-(6, 5, 'I would highly recommend this product to anyone! It is amazing!', 'CUST006', 'PROD006'),
-(7, 3, 'It is an okay product, nothing special.', 'CUST007', 'PROD007'),
-(8, 4, 'I am happy with my purchase. This product is exactly what I needed.', 'CUST008', 'PROD008'),
-(9, 1, 'Terrible product. Do not waste your money on it.', 'CUST009', 'PROD009'),
-(10, 5, 'This product is a game changer! It has improved my life in so many ways.', 'CUST010', 'PROD010');
-
--- INSERTING VALUE IN WISHLIST TABLE
-INSERT INTO WISHLIST ( WISHLIST_ID, DATE_CREATED, CUSTOMER_ID)
-VALUES
-(1, '2022-01-15', 'CUST001'),
-(2, '2022-02-01', 'CUST002'),
-(3, '2022-02-10', 'CUST003'),
-(4, '2022-03-05', 'CUST004'),
-(5, '2022-03-10', 'CUST005'),
-(6, '2022-04-01', 'CUST001'),
-(7, '2022-04-15', 'CUST002'),
-(8, '2022-05-01', 'CUST003'),
-(9, '2022-05-10', 'CUST004'),
-(10, '2022-06-01', 'CUST005');
-
--- INSERTING VALUE IN PROMOTION TABLE
-INSERT INTO PROMOTION ( PROMOTION_ID,  DISCOUNT_PERCENTAGE, START_DATE, END_DATE, PRODUCT_ID)
-VALUES
-(1, 10.00, '2022-01-01', '2022-01-31', 'PROD001'),
-(2, 5.00, '2022-02-01', '2022-02-28', 'PROD002'),
-(3, 15.00, '2022-03-01', '2022-03-31', 'PROD003'),
-(4, 20.00, '2022-04-01', '2022-04-30', 'PROD004'),
-(5, 8.00, '2022-05-01', '2022-05-31', 'PROD005'),
-(6, 12.50, '2022-06-01', '2022-06-30', 'PROD006'),
-(7, 7.00, '2022-07-01', '2022-07-31', 'PROD007'),
-(8, 18.00, '2022-08-01', '2022-08-31', 'PROD008'),
-(9, 25.00, '2022-09-01', '2022-09-30', 'PROD009'),
-(10, 30.00, '2022-10-01', '2022-10-31', 'PROD010');
