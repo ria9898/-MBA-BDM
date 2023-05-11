@@ -62,3 +62,12 @@ SELECT Borrowing.Borrow_ID, Member.Member_Name, Book.Book_Title
 FROM Borrowing
 INNER JOIN Member ON Borrowing.Member_ID = Member.Member_ID
 INNER JOIN Book ON Borrowing.Book_ID = Book.Book_ID;
+
+**Show the price of Books**
+-- SQL QUERY
+select Book_Title,Book_Price from book;
+
+
+
+
+
