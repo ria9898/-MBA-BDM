@@ -68,6 +68,8 @@ INNER JOIN Book ON Borrowing.Book_ID = Book.Book_ID;
 select Book_Title,Book_Price from book;
 
 
+-- Show the Fine Amt. from Borrow ID
+select  Borrow_ID,Fine_Amount  from fine;
 
 
 
