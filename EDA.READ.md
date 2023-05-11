@@ -66,10 +66,13 @@ INNER JOIN Book ON Borrowing.Book_ID = Book.Book_ID;
 **Show the price of Books**
 -- SQL QUERY
 select Book_Title,Book_Price from book;
-
+![image](https://github.com/ria9898/-MBA-BDM/assets/125997110/eaa5d791-8d34-4fcb-97ec-5d28b203ced6)
 
 -- Show the Fine Amt. from Borrow ID
 select  Borrow_ID,Fine_Amount  from fine;
+![image](https://github.com/ria9898/-MBA-BDM/assets/125997110/4934fd5b-381a-40ea-886c-2074970a678e)
+
+-- 
 
 
 
